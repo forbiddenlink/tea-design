@@ -1,0 +1,238 @@
+:root {
+    --primary-light: #AADFC5;
+    --primary: #47946E;
+    --accent: #7A4900;
+    --text: #333333;
+    --background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    position: relative;
+}
+
+.menu {
+    width: 27px;
+    height: 17px;
+    cursor: pointer;
+}
+
+#nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-light);
+    width: 100%;
+    max-width: 300px;
+    padding: 2rem;
+    list-style: none;
+}
+
+#nav.active {
+    display: block;
+}
+
+.exit {
+    text-align: right;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+#nav li a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+#nav li.active a {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Main Content */
+.content-wrapper {
+    padding: 1rem;
+    position: relative;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cta {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.cta.outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Images and Decorative Elements */
+.left-col {
+    display: none;
+}
+
+.fern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('fern.svg') no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.plant-container {
+    margin: 2rem auto;
+    max-width: 300px;
+}
+
+.plant {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+    header {
+        padding: 2rem;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    #nav {
+        display: flex;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .exit {
+        display: none;
+    }
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    main {
+        text-align: left;
+        margin: 0;
+    }
+
+    .btn-container {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .plant-container {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .left-col {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 100%;
+        background: var(--primary-light);
+        z-index: -2;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
