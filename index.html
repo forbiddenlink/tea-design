@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeaPlace | The Art of Tea</title>
+    <title>TeaPlace | Premium Loose-Leaf Tea for Mindful Moments</title>
     <meta
       name="description"
-      content="Premium, ethically sourced loose-leaf tea for the modern connoisseur. Experience the art of tea with TeaPlace."
+      content="Discover premium, ethically sourced loose-leaf tea for the modern connoisseur. Experience the art of mindful tea rituals with TeaPlace."
     />
+    <link rel="canonical" href="https://teaplace.design/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -43,7 +44,7 @@
     <!-- Subtle grain texture for premium feel -->
     <div class="grain-overlay" aria-hidden="true"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
       <div class="container nav-container">
         <a href="#" class="logo">TeaPlace.</a>
         <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -60,6 +61,7 @@
       </div>
     </nav>
 
+    <main id="main-content">
     <header id="home" class="hero">
       <div class="hero-bg">
         <div class="overlay"></div>
@@ -68,6 +70,8 @@
           alt="Traditional tea ceremony with steaming cup"
           class="hero-image"
           fetchpriority="high"
+          width="1920"
+          height="1280"
         />
       </div>
       <div class="container hero-content">
@@ -104,12 +108,13 @@
       </div>
     </header>
 
-    <section id="features" class="features-section">
+    <section id="features" class="features-section" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="visually-hidden">Why Choose TeaPlace</h2>
       <div class="container">
         <div class="feature-grid">
           <div class="feature-card">
             <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             </div>
@@ -118,7 +123,7 @@
           </div>
           <div class="feature-card">
             <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17l-6.3 4 2.3-7-6-4.6h7.6L12 2z" />
               </svg>
             </div>
@@ -127,7 +132,7 @@
           </div>
           <div class="feature-card">
             <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 6v6l4 2"/>
               </svg>
@@ -150,7 +155,7 @@
 
       <div class="journey-stage" data-stage="1">
         <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1920&q=80" alt="Tea plantation in misty highlands" />
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1920&q=80" alt="Tea plantation in misty highlands" width="1920" height="1280" loading="lazy" />
         </div>
         <div class="journey-content">
           <span class="stage-number">01</span>
@@ -161,7 +166,7 @@
 
       <div class="journey-stage" data-stage="2">
         <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1920&q=80" alt="Hands picking tea leaves" />
+          <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1920&q=80" alt="Hands picking tea leaves" width="1920" height="1280" loading="lazy" />
         </div>
         <div class="journey-content">
           <span class="stage-number">02</span>
@@ -172,7 +177,7 @@
 
       <div class="journey-stage" data-stage="3">
         <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1920&q=80" alt="Traditional tea processing" />
+          <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1920&q=80" alt="Traditional tea processing" width="1920" height="1280" loading="lazy" />
         </div>
         <div class="journey-content">
           <span class="stage-number">03</span>
@@ -183,7 +188,7 @@
 
       <div class="journey-stage" data-stage="4">
         <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1920&q=80" alt="Steaming cup of tea" />
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1920&q=80" alt="Steaming cup of tea" width="1920" height="1280" loading="lazy" />
         </div>
         <div class="journey-content">
           <span class="stage-number">04</span>
@@ -203,7 +208,7 @@
         <div class="product-grid">
           <article class="product-card" data-tilt>
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&q=80" alt="Premium Green Tea" />
+              <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&q=80" alt="Emerald Sencha premium green tea with grassy notes" width="600" height="400" loading="lazy" />
               <span class="tag">Bestseller</span>
               <span class="quick-view">Quick View</span>
             </div>
@@ -225,7 +230,7 @@
 
           <article class="product-card" data-tilt>
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600&q=80" alt="Earl Grey Tea" />
+              <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600&q=80" alt="Midnight Earl Grey bold black tea with bergamot" width="600" height="400" loading="lazy" />
               <span class="quick-view">Quick View</span>
             </div>
             <div class="product-info">
@@ -246,7 +251,7 @@
 
           <article class="product-card" data-tilt>
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Jasmine Pearl Tea" />
+              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Jasmine Pearls hand-rolled tea scented with jasmine flowers" width="600" height="400" loading="lazy" />
               <span class="tag tag--gold">Premium</span>
               <span class="quick-view">Quick View</span>
             </div>
@@ -268,7 +273,7 @@
 
           <article class="product-card" data-tilt>
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80" alt="Golden Oolong Tea" />
+              <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80" alt="Golden Oolong semi-oxidized tea with honey notes" width="600" height="400" loading="lazy" />
               <span class="tag tag--new">New</span>
               <span class="quick-view">Quick View</span>
             </div>
@@ -290,7 +295,7 @@
 
           <article class="product-card" data-tilt>
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&q=80" alt="Ceremonial Matcha" />
+              <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&q=80" alt="Ceremonial Matcha stone-ground green tea powder" width="600" height="400" loading="lazy" />
               <span class="quick-view">Quick View</span>
             </div>
             <div class="product-info">
@@ -311,7 +316,7 @@
 
           <article class="product-card" data-tilt>
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80" alt="Chamomile Dreams" />
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80" alt="Chamomile Dreams soothing caffeine-free herbal blend" width="600" height="400" loading="lazy" />
               <span class="quick-view">Quick View</span>
             </div>
             <div class="product-info">
@@ -336,7 +341,7 @@
     <!-- Philosophy Section -->
     <section id="philosophy" class="philosophy-section">
       <div class="philosophy-image">
-        <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=1200&q=80" alt="Traditional tea ceremony" />
+        <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=1200&q=80" alt="Traditional tea ceremony with mindful preparation" width="1200" height="800" loading="lazy" />
       </div>
       <div class="philosophy-content">
         <span class="small-caps">Our Philosophy</span>
@@ -368,34 +373,34 @@
           <h2>Moments of <em>Calm</em></h2>
         </div>
         <div class="image-grid">
-          <a href="#lightbox-1" class="grid-item grid-item--tall">
-            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80" alt="Steam rising from tea cup" />
+          <a href="#lightbox-1" class="grid-item grid-item--tall" aria-label="View enlarged image: Steam rising from tea cup">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80" alt="Steam rising from tea cup" width="800" height="533" loading="lazy" />
           </a>
-          <a href="#lightbox-2" class="grid-item">
-            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Hands warming on mug" />
+          <a href="#lightbox-2" class="grid-item" aria-label="View enlarged image: Hands warming on mug">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Hands warming on mug" width="800" height="533" loading="lazy" />
           </a>
-          <a href="#lightbox-3" class="grid-item">
-            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&q=80" alt="Tea leaves in ceramic dish" />
+          <a href="#lightbox-3" class="grid-item" aria-label="View enlarged image: Tea leaves in ceramic dish">
+            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&q=80" alt="Tea leaves in ceramic dish" width="800" height="533" loading="lazy" />
           </a>
-          <a href="#lightbox-4" class="grid-item grid-item--wide">
-            <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=800&q=80" alt="Cozy reading nook with tea" />
+          <a href="#lightbox-4" class="grid-item grid-item--wide" aria-label="View enlarged image: Cozy reading nook with tea">
+            <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=800&q=80" alt="Cozy reading nook with tea" width="800" height="533" loading="lazy" />
           </a>
-          <a href="#lightbox-5" class="grid-item">
-            <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=800&q=80" alt="Aerial view of tea set" />
+          <a href="#lightbox-5" class="grid-item" aria-label="View enlarged image: Aerial view of tea set">
+            <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=800&q=80" alt="Aerial view of tea set" width="800" height="533" loading="lazy" />
           </a>
-          <a href="#lightbox-6" class="grid-item grid-item--tall">
-            <img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=800&q=80" alt="Tea in nature" />
+          <a href="#lightbox-6" class="grid-item grid-item--tall" aria-label="View enlarged image: Tea in nature">
+            <img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=800&q=80" alt="Tea in nature" width="800" height="533" loading="lazy" />
           </a>
         </div>
       </div>
 
       <!-- CSS-only Lightbox -->
-      <div id="lightbox-1" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1600&q=90" alt="" /></div>
-      <div id="lightbox-2" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1600&q=90" alt="" /></div>
-      <div id="lightbox-3" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=90" alt="" /></div>
-      <div id="lightbox-4" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=1600&q=90" alt="" /></div>
-      <div id="lightbox-5" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1600&q=90" alt="" /></div>
-      <div id="lightbox-6" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=1600&q=90" alt="" /></div>
+      <div id="lightbox-1" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1600&q=90" alt="Steam rising from tea cup - enlarged view" width="1600" height="1067" loading="lazy" /></div>
+      <div id="lightbox-2" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1600&q=90" alt="Hands warming on mug - enlarged view" width="1600" height="1067" loading="lazy" /></div>
+      <div id="lightbox-3" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=90" alt="Tea leaves in ceramic dish - enlarged view" width="1600" height="1067" loading="lazy" /></div>
+      <div id="lightbox-4" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=1600&q=90" alt="Cozy reading nook with tea - enlarged view" width="1600" height="1067" loading="lazy" /></div>
+      <div id="lightbox-5" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1600&q=90" alt="Aerial view of tea set - enlarged view" width="1600" height="1067" loading="lazy" /></div>
+      <div id="lightbox-6" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=1600&q=90" alt="Tea in nature - enlarged view" width="1600" height="1067" loading="lazy" /></div>
     </section>
 
     <!-- Brewing Guide Section -->
@@ -408,61 +413,61 @@
         <div class="brewing-steps">
           <div class="brew-step">
             <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M24 4v8M24 36v8M4 24h8M36 24h8"/>
                 <circle cx="24" cy="24" r="12"/>
                 <path d="M24 18v12M18 24h12"/>
               </svg>
             </div>
             <span class="step-number">01</span>
-            <h4>Measure</h4>
+            <h3>Measure</h3>
             <p>2g of leaves per 8oz water</p>
           </div>
           <div class="brew-step">
             <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M12 40h24M16 40V24a8 8 0 0 1 16 0v16"/>
                 <path d="M20 12c0-2 1-4 4-4s4 2 4 4" stroke-dasharray="2 2"/>
                 <path d="M24 8v-4M20 6l-2-2M28 6l2-2"/>
               </svg>
             </div>
             <span class="step-number">02</span>
-            <h4>Heat</h4>
+            <h3>Heat</h3>
             <p>175°F green, 212°F black</p>
           </div>
           <div class="brew-step">
             <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <circle cx="24" cy="24" r="16"/>
                 <path d="M24 12v12l8 4"/>
               </svg>
             </div>
             <span class="step-number">03</span>
-            <h4>Steep</h4>
+            <h3>Steep</h3>
             <p>3-5 minutes, patience rewarded</p>
           </div>
           <div class="brew-step">
             <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M10 16h20v20a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16z"/>
                 <path d="M30 20h4a4 4 0 0 1 0 8h-4"/>
                 <path d="M16 8v8M20 6v10M24 8v8"/>
               </svg>
             </div>
             <span class="step-number">04</span>
-            <h4>Pour</h4>
+            <h3>Pour</h3>
             <p>Strain and serve warm</p>
           </div>
           <div class="brew-step">
             <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M14 20h20v16a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V20z"/>
                 <path d="M18 12c2-4 6-4 6-4s4 0 6 4"/>
                 <path d="M24 4v4"/>
               </svg>
             </div>
             <span class="step-number">05</span>
-            <h4>Savor</h4>
+            <h3>Savor</h3>
             <p>Breathe in the aroma first</p>
           </div>
         </div>
@@ -476,13 +481,15 @@
         <p>Weekly brewing tips, new arrivals, and 10% off your first order.</p>
         <form class="newsletter-form" onsubmit="return false;">
           <div class="input-wrapper">
-            <input type="email" placeholder="Your email address" required />
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email" placeholder="Your email address" required />
             <button type="submit" class="btn-primary btn-primary--dark">Subscribe</button>
           </div>
           <span class="form-note">No spam. Unsubscribe anytime.</span>
         </form>
       </div>
     </section>
+    </main>
 
     <footer class="footer">
       <div class="container footer-content">
@@ -512,14 +519,14 @@
         </div>
         <div class="footer-links">
           <div class="link-group">
-            <h4>Shop</h4>
+            <h3>Shop</h3>
             <a href="#collection">All Teas</a>
             <a href="#">Accessories</a>
             <a href="#">Gift Sets</a>
             <a href="#">Subscriptions</a>
           </div>
           <div class="link-group">
-            <h4>Company</h4>
+            <h3>Company</h3>
             <a href="#philosophy">Our Story</a>
             <a href="#journey">Sourcing</a>
             <a href="#">Journal</a>
