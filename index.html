@@ -1,57 +1,537 @@
-<html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        
-        <div class="left-col"></div>
-        <div class="fern"></div>
-        
-        <header>
-            <a href="#" class="logo">TeaPlace</a>
-            
-            <nav>
-                <svg class="menu" id="menu-btn" viewBox="0 0 27.329 17">
-                    <g transform="translate(-415.671 -19)">
-                        <line  x1="24.329" transform="translate(417.171 34.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
-                        <line x1="24.329" transform="translate(417.171 27.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
-                        <line x1="17" transform="translate(424.5 20.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
-                    </g>
-                </svg>
-                
-                <ul id="nav">
-                    <li class="exit" id="exit-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48.968" height="48.968" viewBox="0 0 48.968 48.968">
-                            <g transform="translate(-378.092 -80.939)">
-                                <path id="Path_21" data-name="Path 21" d="M383,82l-46.847,46.847" transform="translate(43)" fill="none" stroke="#000" stroke-width="3"/>
-                                <path id="Path_22" data-name="Path 22" d="M336.153,82l46.673,46.673" transform="translate(43)" fill="none" stroke="#000" stroke-width="3"/>
-                            </g>
-                        </svg>
-                    </li>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Browse</a></li>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <div class="content-wrapper">
-            <main>
-                <h1>The Ultimate Tea</h1>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-                
-                <div class="btn-container">
-                    <a href="#" class="cta">Browse our Tea</a>
-                    <a href="#" class="cta outline">Browse our Tea</a>
-                </div>
-            </main>
-            
-            <div class="plant-container">
-                <img src="plant.png" class="plant">
-            </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeaPlace | The Art of Tea</title>
+    <meta
+      name="description"
+      content="Premium, ethically sourced loose-leaf tea for the modern connoisseur. Experience the art of tea with TeaPlace."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teaplace.design/" />
+    <meta property="og:title" content="TeaPlace | The Art of Tea" />
+    <meta
+      property="og:description"
+      content="Premium, ethically sourced loose-leaf tea for the modern connoisseur."
+    />
+    <meta property="og:image" content="assets/images/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Subtle grain texture for premium feel -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">TeaPlace.</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#journey">Our Journey</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#brewing">Brewing Guide</a></li>
+          <li><a href="#collection" class="btn-primary small">Shop Now</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header id="home" class="hero">
+      <div class="hero-bg">
+        <div class="overlay"></div>
+        <img
+          src="assets/images/hero.png"
+          alt="Traditional tea ceremony setting"
+          class="hero-image"
+        />
+      </div>
+      <div class="container hero-content">
+        <div class="hero-subtitle">
+          <span class="line"></span>
+          <span class="text">Est. 2024</span>
+          <span class="line"></span>
         </div>
-        
-        <script src="index.pack.js"></script>
-    </body>
+        <h1 class="hero-title">
+          <span class="title-line title-line--1">
+            <span class="word">The</span>
+            <span class="word">Art</span>
+            <span class="word">of</span>
+          </span>
+          <span class="title-line title-line--2">
+            <span class="word word--accent"><em>Mindful</em></span>
+            <span class="word">Tea</span>
+          </span>
+        </h1>
+        <p class="hero-description">
+          Experience the serenity of premium, ethically sourced loose-leaf
+          blends crafted for the modern connoisseur.
+        </p>
+        <div class="hero-btns">
+          <a href="#collection" class="btn-primary">Explore Collection</a>
+          <a href="#philosophy" class="btn-secondary">Our Story</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-line">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Ethically Sourced</h3>
+            <p>Direct partnerships with farmers ensure fair wages and sustainable practices.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17l-6.3 4 2.3-7-6-4.6h7.6L12 2z" />
+              </svg>
+            </div>
+            <h3>Premium Quality</h3>
+            <p>Hand-picked leaves processed using traditional methods for superior flavor.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Zero Waste</h3>
+            <p>Biodegradable packaging and carbon-neutral shipping on every order.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tea Journey Section -->
+    <section id="journey" class="journey-section">
+      <div class="journey-progress">
+        <div class="progress-dot active" data-stage="1"></div>
+        <div class="progress-dot" data-stage="2"></div>
+        <div class="progress-dot" data-stage="3"></div>
+        <div class="progress-dot" data-stage="4"></div>
+      </div>
+
+      <div class="journey-stage" data-stage="1">
+        <div class="journey-bg">
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1920&q=80" alt="Tea plantation in misty highlands" />
+        </div>
+        <div class="journey-content">
+          <span class="stage-number">01</span>
+          <h2>Origin</h2>
+          <p>Grown in the misty highlands of Kyoto, where ancient volcanic soil and gentle morning fog create the perfect terroir for exceptional tea.</p>
+        </div>
+      </div>
+
+      <div class="journey-stage" data-stage="2">
+        <div class="journey-bg">
+          <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1920&q=80" alt="Hands picking tea leaves" />
+        </div>
+        <div class="journey-content">
+          <span class="stage-number">02</span>
+          <h2>Harvest</h2>
+          <p>Hand-picked at dawn, when leaves hold morning dew. Each leaf selected by master harvesters with generations of expertise.</p>
+        </div>
+      </div>
+
+      <div class="journey-stage" data-stage="3">
+        <div class="journey-bg">
+          <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1920&q=80" alt="Traditional tea processing" />
+        </div>
+        <div class="journey-content">
+          <span class="stage-number">03</span>
+          <h2>Craft</h2>
+          <p>Steamed, rolled, and dried using 400-year-old methods. No shortcuts, no compromise — just time-honored tradition.</p>
+        </div>
+      </div>
+
+      <div class="journey-stage" data-stage="4">
+        <div class="journey-bg">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1920&q=80" alt="Steaming cup of tea" />
+        </div>
+        <div class="journey-content">
+          <span class="stage-number">04</span>
+          <h2>Ritual</h2>
+          <p>Your moment of calm, intentionally brewed. From our hands to your cup — a journey completed in quiet contemplation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="collection" class="collection-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="small-caps">Curated Selection</span>
+          <h2>Signature Blends</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-tilt>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&q=80" alt="Premium Green Tea" />
+              <span class="tag">Bestseller</span>
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h3>Emerald Sencha</h3>
+              <p class="description">Steamed green tea with grassy notes and a refreshing finish.</p>
+              <div class="product-footer">
+                <span class="price">$24</span>
+                <button class="add-to-cart" aria-label="Add to cart">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-tilt>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600&q=80" alt="Earl Grey Tea" />
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h3>Midnight Earl Grey</h3>
+              <p class="description">Bold black tea infused with cold-pressed bergamot oil.</p>
+              <div class="product-footer">
+                <span class="price">$26</span>
+                <button class="add-to-cart" aria-label="Add to cart">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-tilt>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Jasmine Pearl Tea" />
+              <span class="tag tag--gold">Premium</span>
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h3>Jasmine Pearls</h3>
+              <p class="description">Hand-rolled tea pearls scented with fresh jasmine flowers.</p>
+              <div class="product-footer">
+                <span class="price">$32</span>
+                <button class="add-to-cart" aria-label="Add to cart">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-tilt>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80" alt="Golden Oolong Tea" />
+              <span class="tag tag--new">New</span>
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h3>Golden Oolong</h3>
+              <p class="description">Semi-oxidized tea with honey notes and orchid undertones.</p>
+              <div class="product-footer">
+                <span class="price">$28</span>
+                <button class="add-to-cart" aria-label="Add to cart">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-tilt>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&q=80" alt="Ceremonial Matcha" />
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h3>Ceremonial Matcha</h3>
+              <p class="description">Stone-ground green tea powder for traditional preparation.</p>
+              <div class="product-footer">
+                <span class="price">$38</span>
+                <button class="add-to-cart" aria-label="Add to cart">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-tilt>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80" alt="Chamomile Dreams" />
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h3>Chamomile Dreams</h3>
+              <p class="description">Soothing herbal blend for restful evenings. Caffeine-free.</p>
+              <div class="product-footer">
+                <span class="price">$22</span>
+                <button class="add-to-cart" aria-label="Add to cart">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy-section">
+      <div class="philosophy-image">
+        <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=1200&q=80" alt="Traditional tea ceremony" />
+      </div>
+      <div class="philosophy-content">
+        <span class="small-caps">Our Philosophy</span>
+        <h2>Slow Down.<br/>Sip Intentionally.</h2>
+        <p>In a world of instant everything, we believe in the power of pause. Each blend is an invitation to be present — a ritual that transforms a simple cup into a moment of clarity.</p>
+        <p>We partner directly with small family farms, ensuring every leaf tells a story of tradition, care, and respect for the land.</p>
+        <div class="philosophy-stats">
+          <div class="stat">
+            <span class="stat-number" data-target="12">0</span>
+            <span class="stat-label">Countries</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="40">0</span>
+            <span class="stat-label">Partner Farms</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="100">0</span>
+            <span class="stat-label">% Sustainable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Grid Section -->
+    <section id="moments" class="moments-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="small-caps">Gallery</span>
+          <h2>Moments of <em>Calm</em></h2>
+        </div>
+        <div class="image-grid">
+          <a href="#lightbox-1" class="grid-item grid-item--tall">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80" alt="Steam rising from tea cup" />
+          </a>
+          <a href="#lightbox-2" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Hands warming on mug" />
+          </a>
+          <a href="#lightbox-3" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&q=80" alt="Tea leaves in ceramic dish" />
+          </a>
+          <a href="#lightbox-4" class="grid-item grid-item--wide">
+            <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=800&q=80" alt="Cozy reading nook with tea" />
+          </a>
+          <a href="#lightbox-5" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=800&q=80" alt="Aerial view of tea set" />
+          </a>
+          <a href="#lightbox-6" class="grid-item grid-item--tall">
+            <img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=800&q=80" alt="Tea in nature" />
+          </a>
+        </div>
+      </div>
+
+      <!-- CSS-only Lightbox -->
+      <div id="lightbox-1" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1600&q=90" alt="" /></div>
+      <div id="lightbox-2" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1600&q=90" alt="" /></div>
+      <div id="lightbox-3" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=90" alt="" /></div>
+      <div id="lightbox-4" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=1600&q=90" alt="" /></div>
+      <div id="lightbox-5" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1600&q=90" alt="" /></div>
+      <div id="lightbox-6" class="lightbox"><a href="#moments" class="lightbox-close"></a><img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=1600&q=90" alt="" /></div>
+    </section>
+
+    <!-- Brewing Guide Section -->
+    <section id="brewing" class="brewing-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="small-caps">The Ritual</span>
+          <h2>How to Brew</h2>
+        </div>
+        <div class="brewing-steps">
+          <div class="brew-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M24 4v8M24 36v8M4 24h8M36 24h8"/>
+                <circle cx="24" cy="24" r="12"/>
+                <path d="M24 18v12M18 24h12"/>
+              </svg>
+            </div>
+            <span class="step-number">01</span>
+            <h4>Measure</h4>
+            <p>2g of leaves per 8oz water</p>
+          </div>
+          <div class="brew-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 40h24M16 40V24a8 8 0 0 1 16 0v16"/>
+                <path d="M20 12c0-2 1-4 4-4s4 2 4 4" stroke-dasharray="2 2"/>
+                <path d="M24 8v-4M20 6l-2-2M28 6l2-2"/>
+              </svg>
+            </div>
+            <span class="step-number">02</span>
+            <h4>Heat</h4>
+            <p>175°F green, 212°F black</p>
+          </div>
+          <div class="brew-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="24" cy="24" r="16"/>
+                <path d="M24 12v12l8 4"/>
+              </svg>
+            </div>
+            <span class="step-number">03</span>
+            <h4>Steep</h4>
+            <p>3-5 minutes, patience rewarded</p>
+          </div>
+          <div class="brew-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M10 16h20v20a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16z"/>
+                <path d="M30 20h4a4 4 0 0 1 0 8h-4"/>
+                <path d="M16 8v8M20 6v10M24 8v8"/>
+              </svg>
+            </div>
+            <span class="step-number">04</span>
+            <h4>Pour</h4>
+            <p>Strain and serve warm</p>
+          </div>
+          <div class="brew-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 20h20v16a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V20z"/>
+                <path d="M18 12c2-4 6-4 6-4s4 0 6 4"/>
+                <path d="M24 4v4"/>
+              </svg>
+            </div>
+            <span class="step-number">05</span>
+            <h4>Savor</h4>
+            <p>Breathe in the aroma first</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+      <div class="container container--narrow">
+        <h2>Join the Ritual</h2>
+        <p>Weekly brewing tips, new arrivals, and 10% off your first order.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <div class="input-wrapper">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit" class="btn-primary btn-primary--dark">Subscribe</button>
+          </div>
+          <span class="form-note">No spam. Unsubscribe anytime.</span>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo">TeaPlace.</a>
+          <p>Curating the finest tea experiences for moments of peace and connection.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="18" cy="6" r="1"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v12M9 15l3 3 3-3"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Shop</h4>
+            <a href="#collection">All Teas</a>
+            <a href="#">Accessories</a>
+            <a href="#">Gift Sets</a>
+            <a href="#">Subscriptions</a>
+          </div>
+          <div class="link-group">
+            <h4>Company</h4>
+            <a href="#philosophy">Our Story</a>
+            <a href="#journey">Sourcing</a>
+            <a href="#">Journal</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright">
+        <p>&copy; 2024 TeaPlace. Crafted with intention.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <script src="index.js"></script>
+  </body>
 </html>
