@@ -32,3 +32,15 @@ __pycache__/
 coverage/
 test_run/
 supabase/.temp/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env*.local
+
+# Build output
+.next/
+dist/
+build/
+out/
