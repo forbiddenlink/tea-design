@@ -5,10 +5,15 @@
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
-    "watch": "webpack --watch --mode development"
+    "watch": "webpack --watch --mode development",
+    "biome:check": "biome check .",
+    "biome:fix": "biome check . --write",
+    "biome:format": "biome format . --write"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@biomejs/biome": "^2.4.9",
+    "@testing-library/react": "^16.3.2",
+    "vitest": "^4.1.2",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.3"
