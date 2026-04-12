@@ -14,10 +14,18 @@
     "@biomejs/biome": "^2.4.9",
     "@testing-library/react": "^16.3.2",
     "vitest": "^4.1.2",
-    "webpack": "^5.88.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.3"
   },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "pnpm": {
+    "overrides": {
+      "webpack": ">=5.104.1",
+      "serialize-javascript": ">=7.0.5",
+      "webpack-dev-server": ">=5.2.1",
+      "vite": ">=8.0.5"
+    }
+  }
 }
