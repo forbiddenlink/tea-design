@@ -26,7 +26,8 @@
       "webpack": ">=5.104.1",
       "serialize-javascript": ">=7.0.5",
       "webpack-dev-server": ">=5.2.1",
-      "vite": ">=8.0.5"
+      "vite": "8.0.9",
+      "shell-quote": ">=1.8.4"
     }
   }
 }
