@@ -11,11 +11,11 @@
     "biome:format": "biome format . --write"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.2",
+    "@biomejs/biome": "^2.5.3",
     "@testing-library/react": "^16.3.2",
-    "vitest": "^4.1.9",
-    "webpack": "^5.108.1",
-    "webpack-cli": "^7.1.0",
+    "vitest": "^4.1.10",
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1",
     "webpack-dev-server": "^5.2.6"
   },
   "license": "MIT",
