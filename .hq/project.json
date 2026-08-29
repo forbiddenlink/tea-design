@@ -1,0 +1,20 @@
+{
+  "name": "tea-design",
+  "context": "personal",
+  "ownerContext": "personal",
+  "kind": "app",
+  "surface": "product",
+  "lifecycle": "prototype",
+  "systems": ["solo-control-tower", "design-quality"],
+  "tags": ["biome", "react", "vitest"],
+  "hosting": [],
+  "observability": [],
+  "automationLevel": "manual",
+  "confidentialContext": "none",
+  "allowedForCodex": true,
+  "urls": {
+    "repository": "https://github.com/forbiddenlink/tea-design"
+  },
+  "lastReviewedAt": "2026-08-27",
+  "notes": "Design-focused React prototype. Candidate for reuse in palette, visual QA, and design-system experiments."
+}
