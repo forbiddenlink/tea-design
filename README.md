@@ -1,89 +1,49 @@
-# Tea Design Challenge - Mobile First Responsive Design
+# TeaPlace
 
-This project is an implementation of a specific UI design challenge that required using a predefined color scheme and creating a mobile-first responsive design. The challenge required implementing the following exact colors:
-- Mint Green (`#AADFC5`)
-- Forest Green (`#47946E`)
-- Brown (`#7A4900`)
+Portfolio piece: a tea-brand landing page built to demonstrate modern CSS and vanilla-JS
+frontend skills, no framework. Live at [teaplace.design](https://teaplace.design).
 
-The goal was to create a responsive tea shop landing page that effectively uses these specific colors while ensuring proper contrast, accessibility, and a cohesive design across all device sizes.
+Originally built for a "use these exact colors, mobile-first" design challenge, the site has
+since gone through a redesign toward an "Elevated Minimal with Interactive Storytelling"
+direction: a sage-green palette, `scroll-timeline` scroll-driven animation, CSS `@property`
+for animatable custom properties, container queries, and `backdrop-filter`. See
+`docs/plans/2025-02-26-teaplace-portfolio-redesign.md` for the full design spec.
 
-## Design Challenge Requirements
-- Use the exact specified color scheme
-- Implement a mobile-first responsive approach
-- Create a hamburger menu for mobile navigation
-- Incorporate provided images (fern.svg and plant.png)
-- Ensure proper visual hierarchy
-- Maintain consistent spacing and alignment
-- Create an engaging and modern UI
+## Stack
 
-## Design Specifications
+- Vanilla HTML5, CSS3, ES6+ JavaScript, no framework
+- Webpack 5 bundles `index.js` to `dist/`
+- Biome for lint and format
+- pnpm (lockfile: `pnpm-lock.yaml`)
 
-### Color Scheme
-- Primary Light: `#AADFC5` (Mint Green)
-- Primary: `#47946E` (Forest Green)
-- Accent: `#7A4900` (Brown)
+## Getting started
 
-### Responsive Breakpoints
-- Mobile: < 768px
-- Tablet/Desktop: ≥ 768px
-- Large Desktop: ≥ 1200px
-
-### Features
-- Mobile-first approach
-- Responsive navigation with hamburger menu on mobile
-- Two-column layout on larger screens
-- Decorative elements (fern background)
-- Modern button styles with hover effects
-- Optimized typography and spacing
-- Fully responsive images
-
-## Getting Started
-
-### Prerequisites
-- Node.js (latest LTS version recommended)
-- npm (comes with Node.js)
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone [repository-url]
-cd tea-design
+pnpm install
+pnpm start    # webpack serve, dev mode, opens at http://localhost:3000
 ```
 
-2. Install dependencies:
+## Scripts
+
 ```bash
-npm install
+pnpm start          # webpack serve, dev mode
+pnpm watch          # webpack --watch, dev mode
+pnpm build          # webpack production build -> dist/
+pnpm biome:check    # lint check
+pnpm biome:fix      # lint check, auto-fix
+pnpm check          # biome:check && build (what CI runs)
+pnpm audit          # pnpm audit --audit-level high
 ```
 
-### Running the Project
+## Project structure
 
-To start the development server:
-```bash
-npm start
-```
-This will open the project in your default browser at `http://localhost:3000`
+- `index.html`, `index.css`, `index.js`: the entire site, flat at repo root
+- `assets/images/`: `favicon.png`, `hero.png`, `og-image.png`, `product-black.png`,
+  `product-green.png`
+- `dist/`: webpack build output, not committed source
+- `docs/plans/`: redesign planning notes (current design source of truth)
 
-To build for production:
-```bash
-npm run build
-```
+## Deployment
 
-To watch for changes during development:
-```bash
-npm run watch
-```
-
-## Project Structure
-- `index.html` - Main HTML structure
-- `index.css` - Styles with mobile-first approach
-- `index.js` - JavaScript for mobile menu functionality
-- `fern.svg` - Decorative background image
-- `plant.png` - Main content image
-
-## Implementation Details
-- Uses CSS custom properties for consistent theming
-- Implements flexbox and grid for responsive layouts
-- Includes smooth transitions and hover effects
-- Optimized for accessibility with semantic HTML
-- Clean and maintainable code structure
+Deployed on Vercel. The build copies `index.html`, `index.css`, `sitemap.xml`, `robots.txt`,
+and `assets/` into `dist/` alongside the webpack bundle (see `vercel.json`).

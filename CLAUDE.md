@@ -54,8 +54,4 @@ CI (`.github/workflows/ci.yml`) runs `pnpm install --frozen-lockfile`, `pnpm run
 
 ## Gotchas
 
-- README.md still describes the original "tea design challenge" brief (fixed mint
-  green/forest green/brown palette); the actual current site has moved on to the
-  sage-green "Elevated Minimal" direction in `docs/plans/`. Trust the plan doc and the
-  live CSS over the README for current design intent.
 - `vitest` and `@testing-library/react` are unused dependencies (no React in this repo).
