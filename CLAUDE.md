@@ -35,7 +35,7 @@ CI (`.github/workflows/ci.yml`) runs `pnpm install --frozen-lockfile`, `pnpm run
 ## Layout
 
 - `index.html`, `index.css`, `index.js`: the entire site, flat at repo root
-- `assets/`: images (fern.svg, plant.png, etc.)
+- `assets/images/`: hero.png, product-black.png, product-green.png, og-image.png, favicon.png
 - `dist/`: webpack build output, not committed source
 - `docs/plans/`: redesign planning notes
 
