@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@10.34.5",
+  "packageManager": "pnpm@10.34.6",
   "pnpm": {
     "overrides": {
       "webpack": ">=5.104.1 <6",
