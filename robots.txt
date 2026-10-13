@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://teaplace.design/sitemap.xml
+Sitemap: https://tea-design.vercel.app/sitemap.xml
