@@ -1,7 +1,7 @@
 # TeaPlace
 
 Portfolio piece: a tea-brand landing page built to demonstrate modern CSS and vanilla-JS
-frontend skills, no framework. Live at [teaplace.design](https://teaplace.design).
+frontend skills, no framework. Live at [tea-design.vercel.app](https://tea-design.vercel.app).
 
 Originally built for a "use these exact colors, mobile-first" design challenge, the site has
 since gone through a redesign toward an "Elevated Minimal with Interactive Storytelling"
