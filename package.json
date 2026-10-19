@@ -16,8 +16,8 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
     "@testing-library/react": "16.3.3",
-    "vitest": "4.1.11",
-    "webpack": "5.111.1",
+    "vitest": "4.1.12",
+    "webpack": "5.112.0",
     "webpack-cli": "7.2.3",
     "webpack-dev-server": "6.0.0"
   },
