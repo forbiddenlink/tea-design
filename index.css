@@ -423,11 +423,13 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
+  /* Sits above the image: the img is transformed (heroZoom) so it paints over an unstacked overlay. */
+  z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(26, 42, 30, 0.85) 0%,
-    rgba(26, 42, 30, 0.6) 50%,
-    rgba(26, 42, 30, 0.4) 100%
+    rgba(26, 42, 30, 0.88) 0%,
+    rgba(26, 42, 30, 0.8) 50%,
+    rgba(26, 42, 30, 0.62) 100%
   );
 }
 
@@ -568,6 +570,47 @@ h3 {
   transform: translateY(20px);
   animation: fadeUp 0.8s ease forwards;
   animation-delay: 1.3s;
+}
+
+/* 404 page */
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--sage-900);
+  color: var(--color-white);
+  padding: calc(80px + var(--spacing-lg)) 0 var(--spacing-lg);
+}
+
+.not-found-content {
+  max-width: 640px;
+}
+
+.not-found h1 {
+  font-size: clamp(2.5rem, 8vw, var(--text-5xl));
+  color: var(--color-white);
+}
+
+.not-found h1 em {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.not-found p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.not-found .hero-subtitle .text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 /* Scroll Indicator */
@@ -1746,6 +1789,16 @@ img[loading] {
 
   .mobile-menu-btn.active .bar:last-child {
     transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .not-found {
+    text-align: center;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  .not-found-actions {
+    justify-content: center;
   }
 
   /* Hero Mobile */

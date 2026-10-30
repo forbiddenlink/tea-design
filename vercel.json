@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && cp index.html index.css sitemap.xml robots.txt dist/ 2>/dev/null; cp -r assets dist/ 2>/dev/null; true",
+  "buildCommand": "npm run build && cp index.html 404.html index.css sitemap.xml robots.txt dist/ 2>/dev/null; cp -r assets dist/ 2>/dev/null; true",
   "outputDirectory": "dist",
   "headers": [
     {
