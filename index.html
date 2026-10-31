@@ -108,6 +108,18 @@
       </div>
     </header>
 
+    <nav class="type-row" aria-label="Browse by tea type">
+      <div class="container">
+        <ul class="type-row-list">
+          <li><a href="#collection" data-type="green">Green</a></li>
+          <li><a href="#collection" data-type="black">Black</a></li>
+          <li><a href="#collection" data-type="oolong">Oolong</a></li>
+          <li><a href="#collection" data-type="scented">Scented</a></li>
+          <li><a href="#collection" data-type="herbal">Herbal</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <section id="features" class="features-section" aria-labelledby="features-heading">
       <h2 id="features-heading" class="visually-hidden">Why Choose TeaPlace</h2>
       <div class="container">
@@ -203,10 +215,14 @@
         <div class="section-header">
           <span class="small-caps">Curated Selection</span>
           <h2>Signature Blends</h2>
+          <p class="type-status" id="type-status" role="status" hidden>
+            <span id="type-status-text"></span>
+            <button type="button" class="type-clear" id="type-clear">Show all</button>
+          </p>
         </div>
 
         <div class="product-grid">
-          <article class="product-card" data-tilt>
+          <article class="product-card" data-tilt data-type="green">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&q=80" alt="Emerald Sencha premium green tea with grassy notes" width="600" height="400" loading="lazy" />
               <span class="tag">Bestseller</span>
@@ -228,7 +244,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-tilt>
+          <article class="product-card" data-tilt data-type="black">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600&q=80" alt="Midnight Earl Grey bold black tea with bergamot" width="600" height="400" loading="lazy" />
               <span class="quick-view">Quick View</span>
@@ -249,7 +265,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-tilt>
+          <article class="product-card" data-tilt data-type="scented">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Jasmine Pearls hand-rolled tea scented with jasmine flowers" width="600" height="400" loading="lazy" />
               <span class="tag tag--gold">Premium</span>
@@ -271,7 +287,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-tilt>
+          <article class="product-card" data-tilt data-type="oolong">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80" alt="Golden Oolong semi-oxidized tea with honey notes" width="600" height="400" loading="lazy" />
               <span class="tag tag--new">New</span>
@@ -293,7 +309,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-tilt>
+          <article class="product-card" data-tilt data-type="green">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&q=80" alt="Ceremonial Matcha stone-ground green tea powder" width="600" height="400" loading="lazy" />
               <span class="quick-view">Quick View</span>
@@ -314,7 +330,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-tilt>
+          <article class="product-card" data-tilt data-type="herbal">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80" alt="Chamomile Dreams soothing caffeine-free herbal blend" width="600" height="400" loading="lazy" />
               <span class="quick-view">Quick View</span>

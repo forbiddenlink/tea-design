@@ -347,6 +347,35 @@ if (prefersReducedMotion.matches) {
 }
 
 // ============================================
+// Tea type filter (reads data-type on each product card)
+// ============================================
+const typeLinks = document.querySelectorAll('.type-row-list a[data-type]')
+const typeCards = document.querySelectorAll('.product-card[data-type]')
+const typeStatus = document.getElementById('type-status')
+const typeStatusText = document.getElementById('type-status-text')
+
+function applyTypeFilter(type) {
+  let shown = 0
+  typeCards.forEach((card) => {
+    const match = !type || card.dataset.type === type
+    card.hidden = !match
+    if (match) shown += 1
+  })
+  typeLinks.forEach((link) => {
+    if (link.dataset.type === type) link.setAttribute('aria-current', 'true')
+    else link.removeAttribute('aria-current')
+  })
+  if (!typeStatus || !typeStatusText) return
+  typeStatus.hidden = !type
+  typeStatusText.textContent = type ? `Showing ${shown} of ${typeCards.length}: ${type} teas.` : ''
+}
+
+typeLinks.forEach((link) => {
+  link.addEventListener('click', () => applyTypeFilter(link.dataset.type))
+})
+document.getElementById('type-clear')?.addEventListener('click', () => applyTypeFilter(null))
+
+// ============================================
 // Back to Top Button
 // ============================================
 const backToTop = document.querySelector('.back-to-top')
