@@ -36,7 +36,7 @@
   --color-overlay-light: rgba(0, 0, 0, 0.3);
 
   /* Typography */
-  --font-heading: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Outfit", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Type Scale (1.25 ratio) */
@@ -1868,7 +1868,7 @@ h3 {
   display: contents;
 }
 
-.link-group h3 {
+.link-group-title {
   color: var(--color-white);
   font-size: var(--text-base);
   font-weight: 600;
@@ -2175,13 +2175,9 @@ img {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-delay: 0s !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    transition-delay: 0s !important;
+  .hero *,
+  .bench * {
+    animation: none;
+    transition: none;
   }
 }
