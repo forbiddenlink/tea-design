@@ -376,6 +376,120 @@ typeLinks.forEach((link) => {
 document.getElementById('type-clear')?.addEventListener('click', () => applyTypeFilter(null))
 
 // ============================================
+// Brew bench (hero): tea picker, leaf ratio and steep timer.
+// Ratio (2g per 8oz), temperatures and the 3-5 minute steep come from the
+// brewing guide below; teas, prices and descriptions mirror the collection.
+// ============================================
+const benchRoot = document.getElementById('bench')
+
+if (benchRoot) {
+  const GRAMS_PER_8OZ = 2
+  const STEEP_SECONDS = 300
+  const WINDOW_OPEN_SECONDS = 180
+  const RING = 2 * Math.PI * 100
+
+  const teaInputs = benchRoot.querySelectorAll('input[name="bench-tea"]')
+  const nameEl = document.getElementById('bench-name')
+  const descEl = document.getElementById('bench-desc')
+  const gramsEl = document.getElementById('bench-grams')
+  const ozEl = document.getElementById('bench-oz')
+  const ozNoteEl = document.getElementById('bench-oz-note')
+  const cupInput = document.getElementById('bench-cup')
+  const tempItems = benchRoot.querySelectorAll('[data-temp]')
+  const statusEl = document.getElementById('bench-status')
+  const timeEl = document.getElementById('dial-time')
+  const ringEl = document.getElementById('dial-progress')
+  const startBtn = document.getElementById('dial-start')
+  const resetBtn = document.getElementById('dial-reset')
+
+  let elapsed = 0
+  let startedAt = 0
+  let timer = null
+  let announced = 0
+
+  const formatTime = (seconds) => {
+    const whole = Math.floor(seconds)
+    return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
+  }
+
+  const renderRatio = () => {
+    const oz = Number(cupInput.value)
+    const grams = (oz / 8) * GRAMS_PER_8OZ
+    gramsEl.textContent = String(Number(grams.toFixed(2)))
+    ozEl.textContent = `${oz} oz`
+    ozNoteEl.textContent = String(oz)
+  }
+
+  const renderTea = () => {
+    const picked = benchRoot.querySelector('input[name="bench-tea"]:checked')
+    if (!picked) return
+    nameEl.textContent = picked.value
+    descEl.textContent = picked.dataset.desc
+    tempItems.forEach((item) => {
+      if (item.dataset.temp === picked.dataset.type) item.setAttribute('aria-current', 'true')
+      else item.removeAttribute('aria-current')
+    })
+  }
+
+  const renderTimer = () => {
+    timeEl.textContent = formatTime(elapsed)
+    ringEl.style.strokeDashoffset = String(RING * (1 - Math.min(elapsed / STEEP_SECONDS, 1)))
+  }
+
+  const tick = () => {
+    elapsed = Math.min((performance.now() - startedAt) / 1000, STEEP_SECONDS)
+    renderTimer()
+    if (elapsed >= WINDOW_OPEN_SECONDS && announced < 1) {
+      announced = 1
+      statusEl.textContent = 'Steep window open: 3 to 5 minutes.'
+    }
+    if (elapsed >= STEEP_SECONDS) {
+      announced = 2
+      stop()
+      statusEl.textContent = 'Five minutes. Strain and serve warm.'
+      startBtn.textContent = 'Start'
+      startBtn.disabled = true
+    }
+  }
+
+  function stop() {
+    if (timer) window.clearInterval(timer)
+    timer = null
+  }
+
+  startBtn.addEventListener('click', () => {
+    if (timer) {
+      stop()
+      startBtn.textContent = 'Resume'
+      return
+    }
+    startedAt = performance.now() - elapsed * 1000
+    timer = window.setInterval(tick, 250)
+    startBtn.textContent = 'Pause'
+    if (announced === 0) statusEl.textContent = 'Steeping.'
+  })
+
+  resetBtn.addEventListener('click', () => {
+    stop()
+    elapsed = 0
+    announced = 0
+    startBtn.disabled = false
+    startBtn.textContent = 'Start'
+    statusEl.textContent = '2g of leaves per 8oz water. Press start to steep.'
+    renderTimer()
+  })
+
+  teaInputs.forEach((input) => {
+    input.addEventListener('change', renderTea)
+  })
+  cupInput.addEventListener('input', renderRatio)
+
+  renderTea()
+  renderRatio()
+  renderTimer()
+}
+
+// ============================================
 // Back to Top Button
 // ============================================
 const backToTop = document.querySelector('.back-to-top')

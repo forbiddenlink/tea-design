@@ -23,7 +23,7 @@
     <meta name="twitter:description" content="Premium, ethically sourced loose-leaf tea for the modern connoisseur." />
 
     <!-- Theme Color for mobile browsers -->
-    <meta name="theme-color" content="#4a5d4f" />
+    <meta name="theme-color" content="#17403a" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png" />
@@ -33,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -63,48 +63,99 @@
 
     <main id="main-content">
     <header id="home" class="hero">
-      <div class="hero-bg">
-        <div class="overlay"></div>
-        <img
-          src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1920&q=85"
-          alt="Traditional tea ceremony with steaming cup"
-          class="hero-image"
-          fetchpriority="high"
-          width="1920"
-          height="1280"
-        />
-      </div>
       <div class="container hero-content">
         <div class="hero-subtitle">
           <span class="line"></span>
           <span class="text">Est. 2024</span>
-          <span class="line"></span>
         </div>
         <h1 class="hero-title">
-          <span class="title-line title-line--1">
+          <span class="title-line">
             <span class="word">The</span>
             <span class="word">Art</span>
             <span class="word">of</span>
-          </span>
-          <span class="title-line title-line--2">
-            <span class="word word--accent"><em>Mindful</em></span>
+            <span class="word">Mindful</span>
             <span class="word">Tea</span>
           </span>
         </h1>
-        <p class="hero-description">
-          Experience the serenity of premium, ethically sourced loose-leaf
-          blends crafted for the modern connoisseur.
-        </p>
-        <div class="hero-btns">
-          <a href="#collection" class="btn-primary">Explore Collection</a>
-          <a href="#philosophy" class="btn-secondary">Our Story</a>
+        <div class="hero-lede">
+          <p class="hero-description">
+            Experience the serenity of premium, ethically sourced loose-leaf
+            blends crafted for the modern connoisseur.
+          </p>
+          <div class="hero-btns">
+            <a href="#collection" class="btn-primary">Explore Collection</a>
+            <a href="#philosophy" class="btn-secondary">Our Story</a>
+          </div>
         </div>
-      </div>
-      <div class="scroll-indicator">
-        <span class="scroll-text">Scroll</span>
-        <div class="scroll-line">
-          <div class="scroll-dot"></div>
-        </div>
+
+        <section class="bench" id="bench" aria-labelledby="bench-title">
+          <h2 id="bench-title" class="bench-title">Brew bench</h2>
+          <div class="bench-grid">
+            <fieldset class="bench-teas">
+              <legend>Choose a tea</legend>
+              <label class="bench-tea">
+                <input type="radio" name="bench-tea" value="Emerald Sencha" data-type="green" data-desc="Steamed green tea with grassy notes and a refreshing finish." checked />
+                <span class="bench-tea-name">Emerald Sencha</span><span class="bench-tea-price">$24</span>
+              </label>
+              <label class="bench-tea">
+                <input type="radio" name="bench-tea" value="Midnight Earl Grey" data-type="black" data-desc="Bold black tea infused with cold-pressed bergamot oil." />
+                <span class="bench-tea-name">Midnight Earl Grey</span><span class="bench-tea-price">$26</span>
+              </label>
+              <label class="bench-tea">
+                <input type="radio" name="bench-tea" value="Jasmine Pearls" data-type="scented" data-desc="Hand-rolled tea pearls scented with fresh jasmine flowers." />
+                <span class="bench-tea-name">Jasmine Pearls</span><span class="bench-tea-price">$32</span>
+              </label>
+              <label class="bench-tea">
+                <input type="radio" name="bench-tea" value="Golden Oolong" data-type="oolong" data-desc="Semi-oxidized tea with honey notes and orchid undertones." />
+                <span class="bench-tea-name">Golden Oolong</span><span class="bench-tea-price">$28</span>
+              </label>
+              <label class="bench-tea">
+                <input type="radio" name="bench-tea" value="Ceremonial Matcha" data-type="green" data-desc="Stone-ground green tea powder for traditional preparation." />
+                <span class="bench-tea-name">Ceremonial Matcha</span><span class="bench-tea-price">$38</span>
+              </label>
+              <label class="bench-tea">
+                <input type="radio" name="bench-tea" value="Chamomile Dreams" data-type="herbal" data-desc="Soothing herbal blend for restful evenings. Caffeine-free." />
+                <span class="bench-tea-name">Chamomile Dreams</span><span class="bench-tea-price">$22</span>
+              </label>
+            </fieldset>
+
+            <div class="bench-dial">
+              <div class="dial">
+                <svg viewBox="0 0 232 232" aria-hidden="true" focusable="false">
+                  <circle class="dial-track" cx="116" cy="116" r="100" />
+                  <circle class="dial-window" cx="116" cy="116" r="100" stroke-dasharray="251.33 628.32" stroke-dashoffset="-376.99" />
+                  <circle class="dial-progress" id="dial-progress" cx="116" cy="116" r="100" stroke-dasharray="628.32" stroke-dashoffset="628.32" />
+                </svg>
+                <div class="dial-face">
+                  <span class="dial-time" id="dial-time">0:00</span>
+                  <span class="dial-sub">Steep</span>
+                </div>
+              </div>
+              <div class="dial-actions">
+                <button type="button" class="bench-btn" id="dial-start">Start</button>
+                <button type="button" class="bench-btn bench-btn--ghost" id="dial-reset">Reset</button>
+              </div>
+              <p class="bench-window">The pale arc marks the 3 to 5 minute steep.</p>
+            </div>
+
+            <div class="bench-readout">
+              <h3 id="bench-name">Emerald Sencha</h3>
+              <p id="bench-desc">Steamed green tea with grassy notes and a refreshing finish.</p>
+              <div class="bench-ratio">
+                <output class="bench-grams" id="bench-grams" for="bench-cup">2</output>
+                <span class="bench-grams-unit">g</span>
+                <span class="bench-ratio-note">of leaves for <span id="bench-oz-note">8</span> oz of water</span>
+              </div>
+              <label class="bench-cup" for="bench-cup"><span>Cup size</span><output id="bench-oz" for="bench-cup">8 oz</output></label>
+              <input class="bench-range" id="bench-cup" type="range" min="4" max="16" step="2" value="8" />
+              <ul class="bench-temps" aria-label="Water temperature">
+                <li data-temp="green">175°F green</li>
+                <li data-temp="black">212°F black</li>
+              </ul>
+              <p class="bench-status" id="bench-status" role="status">2g of leaves per 8oz water. Press start to steep.</p>
+            </div>
+          </div>
+        </section>
       </div>
     </header>
 
@@ -194,7 +245,7 @@
         <div class="journey-content">
           <span class="stage-number">03</span>
           <h2>Craft</h2>
-          <p>Steamed, rolled, and dried using 400-year-old methods. No shortcuts, no compromise — just time-honored tradition.</p>
+          <p>Steamed, rolled, and dried using 400-year-old methods. No shortcuts, no compromise. Just time-honored tradition.</p>
         </div>
       </div>
 
@@ -205,7 +256,7 @@
         <div class="journey-content">
           <span class="stage-number">04</span>
           <h2>Ritual</h2>
-          <p>Your moment of calm, intentionally brewed. From our hands to your cup — a journey completed in quiet contemplation.</p>
+          <p>Your moment of calm, intentionally brewed. From our hands to your cup, a journey completed in quiet contemplation.</p>
         </div>
       </div>
     </section>
@@ -268,7 +319,7 @@
           <article class="product-card" data-tilt data-type="scented">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Jasmine Pearls hand-rolled tea scented with jasmine flowers" width="600" height="400" loading="lazy" />
-              <span class="tag tag--gold">Premium</span>
+              <span class="tag tag--clay">Premium</span>
               <span class="quick-view">Quick View</span>
             </div>
             <div class="product-info">
@@ -362,7 +413,7 @@
       <div class="philosophy-content">
         <span class="small-caps">Our Philosophy</span>
         <h2>Slow Down.<br/>Sip Intentionally.</h2>
-        <p>In a world of instant everything, we believe in the power of pause. Each blend is an invitation to be present — a ritual that transforms a simple cup into a moment of clarity.</p>
+        <p>In a world of instant everything, we believe in the power of pause. Each blend is an invitation to be present, a ritual that transforms a simple cup into a moment of clarity.</p>
         <p>We partner directly with small family farms, ensuring every leaf tells a story of tradition, care, and respect for the land.</p>
         <div class="philosophy-stats">
           <div class="stat">
@@ -386,7 +437,7 @@
       <div class="container">
         <div class="section-header">
           <span class="small-caps">Gallery</span>
-          <h2>Moments of <em>Calm</em></h2>
+          <h2>Moments of Calm</h2>
         </div>
         <div class="image-grid">
           <a href="#lightbox-1" class="grid-item grid-item--tall" aria-label="View enlarged image: Steam rising from tea cup">
