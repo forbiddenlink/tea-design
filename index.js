@@ -1,5 +1,17 @@
 // TeaPlace: vanilla JS. Steep scene, nav, stamps, brew bench timer.
 
+// PLACEHOLDER [STEEP TIME PER TEA]: not supplied by the owner, confirm before launch
+// Seconds. The only supplied fact is "3 to 5 minutes". Drives the steep clock ticks,
+// the cup labels and the collection TIME column.
+const STEEP_TIMES = {
+  sencha: 180,
+  earl: 270,
+  jasmine: 210,
+  oolong: 240,
+  matcha: 60,
+  chamomile: 300,
+}
+
 const root = document.documentElement
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value))
@@ -7,6 +19,14 @@ const ease = (value) => value * value * (3 - 2 * value)
 const formatTime = (seconds) => {
   const whole = Math.floor(seconds)
   return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
+}
+
+for (const el of document.querySelectorAll('[data-steep-time]')) {
+  const id = el.dataset.steepTime
+  el.textContent = `${id === 'matcha' ? 'whisk ' : ''}${formatTime(STEEP_TIMES[id])}`
+}
+for (const cup of document.querySelectorAll('.cup[data-tea]')) {
+  cup.dataset.ideal = String(STEEP_TIMES[cup.dataset.tea])
 }
 
 // ============================================
@@ -47,6 +67,7 @@ const steep = document.querySelector('[data-steep]')
 if (steep) {
   const cups = Array.from(steep.querySelectorAll('.cup'))
   const clockEl = document.getElementById('steep-clock')
+  const cueEl = steep.querySelector('.steep-cue')
   const STEEP_SECONDS = 300
   const GATHER_END = 0.1
   const CLOCK_START = 0.16
@@ -58,6 +79,7 @@ if (steep) {
       for (const name of ['--g', '--pour', '--b', '--vapor']) cup.style.removeProperty(name)
       cup.classList.remove('is-stamped')
     }
+    steep.querySelector('.steep-cue')?.classList.remove('is-done')
   }
 
   const render = () => {
@@ -78,6 +100,7 @@ if (steep) {
       cup.classList.toggle('is-stamped', t >= ideal)
     })
     if (clockEl) clockEl.textContent = formatTime(t)
+    if (cueEl) cueEl.classList.toggle('is-done', p > 0.96)
   }
 
   const queue = () => {

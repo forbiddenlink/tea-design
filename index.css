@@ -620,6 +620,8 @@ html.pin .cup.is-stamped .tick {
 
 .clock {
   display: none;
+  flex-shrink: 0;
+  white-space: nowrap;
   align-items: baseline;
   gap: 0.5rem;
 }
@@ -640,7 +642,6 @@ html.pin .cup.is-stamped .tick {
   .steep-head .eyebrow {
     letter-spacing: 0;
     font-size: 0.7rem;
-    white-space: nowrap;
   }
 
   .clock-time {
@@ -656,6 +657,7 @@ html.pin .cup.is-stamped .tick {
 
 .steep-cue {
   display: none;
+  transition: opacity 0.4s ease;
   text-transform: uppercase;
   color: var(--ink-2);
   text-align: center;
@@ -692,6 +694,10 @@ html.pin .steep-cue {
   justify-content: center;
 }
 
+html.pin .steep-cue.is-done {
+  opacity: 0;
+}
+
 html.pin .steep-row {
   flex: 1;
   align-content: center;
@@ -706,8 +712,28 @@ html.pin .steep-row .cup .bowl {
 }
 
 @media (min-width: 900px) {
+  html.pin .steep {
+    max-width: none;
+  }
+
+  html.pin .steep-stage {
+    padding-inline: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  html.pin .steep-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 2rem;
+    width: min(100%, 1000px);
+    margin-inline: auto;
+    padding-top: 1rem;
+  }
+
   html.pin .steep-row .cup .bowl {
-    max-width: min(210px, 14vw, 28vh);
+    max-width: min(280px, 21vw, 27vh);
+  }
+
+  html.pin .cup-name {
+    font-size: 1.2rem;
   }
 }
 
@@ -788,8 +814,16 @@ html.pin .steep-row .cup .bowl {
   font-size: 0.72rem;
 }
 
+@media (min-width: 900px) {
+  .score tbody th {
+    min-width: 15rem;
+  }
+}
+
 .row-name {
   font-family: var(--display);
+  overflow-wrap: normal;
+  word-break: keep-all;
   font-size: 1.3rem;
   line-height: 1.15;
   display: block;
