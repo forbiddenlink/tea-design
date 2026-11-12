@@ -3,119 +3,449 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeaPlace | Premium Loose-Leaf Tea for Mindful Moments</title>
+    <title>TeaPlace | Six loose-leaf teas, cupped side by side</title>
     <meta
       name="description"
-      content="Discover premium, ethically sourced loose-leaf tea for the modern connoisseur. Experience the art of mindful tea rituals with TeaPlace."
+      content="TeaPlace sells six loose-leaf teas online, laid out like a tea merchant's cupping sheet: Emerald Sencha, Midnight Earl Grey, Jasmine Pearls, Golden Oolong, Ceremonial Matcha and Chamomile Dreams."
     />
     <link rel="canonical" href="https://tea-design.vercel.app/" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tea-design.vercel.app/" />
-    <meta property="og:title" content="TeaPlace | The Art of Tea" />
-    <meta property="og:description" content="Premium, ethically sourced loose-leaf tea for the modern connoisseur." />
+    <meta property="og:title" content="TeaPlace | Six loose-leaf teas, cupped side by side" />
+    <meta property="og:description" content="Six loose-leaf teas, laid out the way a buyer cups them." />
     <meta property="og:image" content="https://tea-design.vercel.app/assets/images/og-image.png" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="TeaPlace | The Art of Tea" />
-    <meta name="twitter:description" content="Premium, ethically sourced loose-leaf tea for the modern connoisseur." />
+    <meta name="twitter:title" content="TeaPlace | Six loose-leaf teas, cupped side by side" />
+    <meta name="twitter:description" content="Six loose-leaf teas, laid out the way a buyer cups them." />
 
-    <!-- Theme Color for mobile browsers -->
-    <meta name="theme-color" content="#17403a" />
+    <meta name="theme-color" content="#F3EEE3" />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500..800&family=Figtree:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Shippori+Mincho:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Styles -->
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!-- Subtle grain texture for premium feel -->
-    <div class="grain-overlay" aria-hidden="true"></div>
+    <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#E4DFD2" />
+          <stop offset="0.28" stop-color="#FBFAF6" />
+          <stop offset="0.7" stop-color="#F6F3EA" />
+          <stop offset="1" stop-color="#D9D3C4" />
+        </linearGradient>
+        <linearGradient id="porcelain-in" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#DDD7C8" />
+          <stop offset="1" stop-color="#F8F6EF" />
+        </linearGradient>
+      </defs>
+    </svg>
 
-    <nav class="navbar" aria-label="Main navigation">
-      <div class="container nav-container">
-        <a href="#home" class="logo">TeaPlace.</a>
-        <button type="button" class="mobile-menu-btn" aria-label="Toggle menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="#journey">Our Journey</a></li>
-          <li><a href="#collection">Collection</a></li>
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="#brewing">Brewing Guide</a></li>
-          <li><a href="#collection" class="btn-primary small">Shop Now</a></li>
-        </ul>
-      </div>
-    </nav>
+    <a class="skip" href="#collection">Skip to the collection</a>
 
-    <main id="main-content">
-    <header id="home" class="hero">
-      <div class="container hero-content">
-        <div class="hero-subtitle">
-          <span class="line"></span>
-          <span class="text">Est. 2024</span>
+    <header class="nav" id="nav">
+      <a class="brand nav-hide" href="#top" aria-label="TeaPlace, back to top">
+        <span class="seal" aria-hidden="true">茶</span>
+        <span class="brand-word">TeaPlace</span>
+      </a>
+      <nav class="nav-links nav-hide" aria-label="Sections">
+        <a href="#steep">The steep</a>
+        <a href="#origin">Origin</a>
+        <a href="#bench">Brew bench</a>
+        <a href="#brew">How to brew</a>
+      </nav>
+      <a class="pill" href="#collection">Shop the six</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="sheet-head mono">
+          <span>Cupping sheet</span>
+          <span>Session <time id="session-date" datetime="2026-11-12">2026-11-12</time></span>
+          <span>Lot 01–06</span>
         </div>
-        <h1 class="hero-title">
-          <span class="title-line">
-            <span class="word">The</span>
-            <span class="word">Art</span>
-            <span class="word">of</span>
-            <span class="word">Mindful</span>
-            <span class="word">Tea</span>
-          </span>
-        </h1>
-        <div class="hero-lede">
-          <p class="hero-description">
-            Experience the serenity of premium, ethically sourced loose-leaf
-            blends crafted for the modern connoisseur.
-          </p>
-          <div class="hero-btns">
-            <a href="#collection" class="btn-primary">Explore Collection</a>
-            <a href="#philosophy" class="btn-secondary">Our Story</a>
+        <h1 class="wordmark" id="hero-title" aria-label="TeaPlace"><span class="ink" style="--k:0" aria-hidden="true">T</span><span class="ink" style="--k:1" aria-hidden="true">e</span><span class="ink" style="--k:2" aria-hidden="true">a</span><span class="ink" style="--k:3" aria-hidden="true">P</span><span class="ink" style="--k:4" aria-hidden="true">l</span><span class="ink" style="--k:5" aria-hidden="true">a</span><span class="ink" style="--k:6" aria-hidden="true">c</span><span class="ink" style="--k:7" aria-hidden="true">e</span></h1>
+        <div class="hero-sub">
+          <p class="hero-lede">Six loose-leaf teas, laid out the way a buyer cups them.</p>
+          <a class="btn" href="#collection">Shop the six</a>
+        </div>
+        <ol class="hero-row" aria-label="The six teas, in tasting bowls">
+          <li class="cup cup--hero" style="--liq:#8FBA84;--pour:0;--b:0;--vapor:0">
+            <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+            <span class="cup-lot mono">01</span>
+            <span class="cup-name">Emerald Sencha</span>
+          </li>
+          <li class="cup cup--hero" style="--liq:#6A2E1C;--pour:0;--b:0;--vapor:0">
+            <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+            <span class="cup-lot mono">02</span>
+            <span class="cup-name">Midnight Earl Grey</span>
+          </li>
+          <li class="cup cup--hero" style="--liq:#EBDDA6;--pour:0;--b:0;--vapor:0">
+            <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+            <span class="cup-lot mono">03</span>
+            <span class="cup-name">Jasmine Pearls</span>
+          </li>
+          <li class="cup cup--hero" style="--liq:#CD8A2A;--pour:0;--b:0;--vapor:0">
+            <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+            <span class="cup-lot mono">04</span>
+            <span class="cup-name">Golden Oolong</span>
+          </li>
+          <li class="cup cup--hero" style="--liq:#7BA33A;--pour:0;--b:0;--vapor:0">
+            <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+            <span class="cup-lot mono">05</span>
+            <span class="cup-name">Ceremonial Matcha</span>
+          </li>
+          <li class="cup cup--hero" style="--liq:#DDC25A;--pour:0;--b:0;--vapor:0">
+            <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+            <span class="cup-lot mono">06</span>
+            <span class="cup-name">Chamomile Dreams</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="steep" id="steep" data-steep aria-labelledby="steep-title">
+        <div class="steep-stage">
+          <div class="steep-head">
+            <div>
+              <p class="eyebrow mono">Lot 01–06 · 2 g per 8 oz</p>
+              <h2 id="steep-title">The steep</h2>
+            </div>
+            <div class="clock mono" aria-hidden="true">
+              <span class="clock-time" id="steep-clock">0:00</span>
+              <span class="clock-max">/ 5:00</span>
+            </div>
+          </div>
+          <ol class="steep-row" aria-label="Six bowls steeping">
+            <li class="cup" style="--liq:#8FBA84;--i:0;--off:-2.5" data-ideal="180">
+              <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+              <span class="cup-name">Emerald Sencha</span>
+              <span class="cup-spec mono">175°F · 3:00</span>
+              <span class="cup-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Grassy, with a refreshing finish.</span></span>
+            </li>
+            <li class="cup" style="--liq:#6A2E1C;--i:1;--off:-1.5" data-ideal="270">
+              <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+              <span class="cup-name">Midnight Earl Grey</span>
+              <span class="cup-spec mono">212°F · 4:30</span>
+              <span class="cup-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Bold black tea, cold-pressed bergamot.</span></span>
+            </li>
+            <li class="cup" style="--liq:#EBDDA6;--i:2;--off:-0.5" data-ideal="210">
+              <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+              <span class="cup-name">Jasmine Pearls</span>
+              <span class="cup-spec mono">175°F · 3:30</span>
+              <span class="cup-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Hand-rolled pearls, fresh jasmine.</span></span>
+            </li>
+            <li class="cup" style="--liq:#CD8A2A;--i:3;--off:0.5" data-ideal="240">
+              <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+              <span class="cup-name">Golden Oolong</span>
+              <span class="cup-spec mono">195°F · 4:00</span>
+              <span class="cup-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Honey and orchid.</span></span>
+            </li>
+            <li class="cup" style="--liq:#7BA33A;--i:4;--off:1.5" data-ideal="60">
+              <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+              <span class="cup-name">Ceremonial Matcha</span>
+              <span class="cup-spec mono">175°F · whisk 1:00</span>
+              <span class="cup-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Stone-ground, whisked not steeped.</span></span>
+            </li>
+            <li class="cup" style="--liq:#DDC25A;--i:5;--off:2.5" data-ideal="300">
+              <svg class="bowl" viewBox="0 -34 200 164" aria-hidden="true" focusable="false">
+              <g class="steam"><path d="M76 8c-9-10 9-16 0-30" /><path d="M100 4c-9-10 9-16 0-30" /><path d="M124 8c-9-10 9-16 0-30" /></g>
+              <ellipse class="bowl-shadow" cx="100" cy="126" rx="74" ry="6" />
+              <path class="bowl-foot" d="M72 120h56v8H72z" />
+              <path class="bowl-body" d="M8 44C8 104 52 124 100 124S192 104 192 44Z" />
+              <ellipse class="bowl-rim" cx="100" cy="44" rx="92" ry="28" />
+              <ellipse class="bowl-in" cx="100" cy="46" rx="82" ry="23" />
+              <ellipse class="water" cx="100" cy="49" rx="76" ry="19" />
+              <ellipse class="liquor" cx="100" cy="49" rx="76" ry="19" />
+            </svg>
+              <span class="cup-name">Chamomile Dreams</span>
+              <span class="cup-spec mono">212°F · 5:00</span>
+              <span class="cup-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Herbal, caffeine-free.</span></span>
+            </li>
+          </ol>
+          <p class="steep-cue mono" aria-hidden="true">Scroll to pour</p>
+        </div>
+      </section>
+
+      <section class="collection" id="collection" aria-labelledby="collection-title">
+        <div class="wrap">
+          <div class="card-head">
+            <p class="eyebrow mono">Scoring card</p>
+            <h2 id="collection-title">The collection</h2>
+          </div>
+          <div class="card">
+            <table class="score">
+              <caption class="visually-hidden">
+                The six teas: leaf, water temperature, grams, time, liquor color, notes and price
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Tea</th>
+                  <th scope="col">Leaf</th>
+                  <th scope="col">Water</th>
+                  <th scope="col">Grams</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Liquor</th>
+                  <th scope="col">Notes</th>
+                  <th scope="col">Price</th>
+                  <th scope="col"><span class="visually-hidden">Add to order</span></th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row" data-label="Lot"><span class="lot mono">01</span><span class="row-name">Emerald Sencha</span></th>
+                <td data-label="Leaf">Steamed green</td>
+                <td data-label="Water" class="mono">175°F</td>
+                <td data-label="Grams" class="mono">2 g / 8 oz</td>
+                <td data-label="Time" class="mono">3 to 5 min</td>
+                <td data-label="Liquor"><span class="swatch" style="--liq:#8FBA84" role="img" aria-label="Liquor color: jade"></span></td>
+                <td data-label="Notes" class="notes">Steamed green tea with grassy notes and a refreshing finish.</td>
+                <td data-label="Price" class="mono price">$24</td>
+                <td class="add-cell"><button type="button" class="stamp" aria-pressed="false" data-tea="Emerald Sencha"><span class="stamp-label">Add</span><span class="visually-hidden"> Emerald Sencha</span></button></td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Lot"><span class="lot mono">02</span><span class="row-name">Midnight Earl Grey</span></th>
+                <td data-label="Leaf">Black, cold-pressed bergamot</td>
+                <td data-label="Water" class="mono">212°F</td>
+                <td data-label="Grams" class="mono">2 g / 8 oz</td>
+                <td data-label="Time" class="mono">3 to 5 min</td>
+                <td data-label="Liquor"><span class="swatch" style="--liq:#6A2E1C" role="img" aria-label="Liquor color: mahogany"></span></td>
+                <td data-label="Notes" class="notes">Bold black tea infused with cold-pressed bergamot oil.</td>
+                <td data-label="Price" class="mono price">$26</td>
+                <td class="add-cell"><button type="button" class="stamp" aria-pressed="false" data-tea="Midnight Earl Grey"><span class="stamp-label">Add</span><span class="visually-hidden"> Midnight Earl Grey</span></button></td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Lot"><span class="lot mono">03</span><span class="row-name">Jasmine Pearls</span></th>
+                <td data-label="Leaf">Hand-rolled, jasmine-scented</td>
+                <td data-label="Water" class="mono">175°F</td>
+                <td data-label="Grams" class="mono">2 g / 8 oz</td>
+                <td data-label="Time" class="mono">3 to 5 min</td>
+                <td data-label="Liquor"><span class="swatch" style="--liq:#EBDDA6" role="img" aria-label="Liquor color: pale gold"></span></td>
+                <td data-label="Notes" class="notes">Hand-rolled tea pearls scented with fresh jasmine flowers.</td>
+                <td data-label="Price" class="mono price">$32</td>
+                <td class="add-cell"><button type="button" class="stamp" aria-pressed="false" data-tea="Jasmine Pearls"><span class="stamp-label">Add</span><span class="visually-hidden"> Jasmine Pearls</span></button></td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Lot"><span class="lot mono">04</span><span class="row-name">Golden Oolong</span></th>
+                <td data-label="Leaf">Semi-oxidized</td>
+                <td data-label="Water" class="mono">195°F</td>
+                <td data-label="Grams" class="mono">2 g / 8 oz</td>
+                <td data-label="Time" class="mono">3 to 5 min</td>
+                <td data-label="Liquor"><span class="swatch" style="--liq:#CD8A2A" role="img" aria-label="Liquor color: amber"></span></td>
+                <td data-label="Notes" class="notes">Semi-oxidized tea with honey notes and orchid undertones.</td>
+                <td data-label="Price" class="mono price">$28</td>
+                <td class="add-cell"><button type="button" class="stamp" aria-pressed="false" data-tea="Golden Oolong"><span class="stamp-label">Add</span><span class="visually-hidden"> Golden Oolong</span></button></td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Lot"><span class="lot mono">05</span><span class="row-name">Ceremonial Matcha</span></th>
+                <td data-label="Leaf">Stone-ground</td>
+                <td data-label="Water" class="mono">175°F</td>
+                <td data-label="Grams" class="mono">2 g / 8 oz</td>
+                <td data-label="Time" class="mono">Whisked</td>
+                <td data-label="Liquor"><span class="swatch" style="--liq:#7BA33A" role="img" aria-label="Liquor color: opaque green"></span></td>
+                <td data-label="Notes" class="notes">Stone-ground green tea powder, whisked rather than steeped.</td>
+                <td data-label="Price" class="mono price">$38</td>
+                <td class="add-cell"><button type="button" class="stamp" aria-pressed="false" data-tea="Ceremonial Matcha"><span class="stamp-label">Add</span><span class="visually-hidden"> Ceremonial Matcha</span></button></td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Lot"><span class="lot mono">06</span><span class="row-name">Chamomile Dreams</span></th>
+                <td data-label="Leaf">Herbal, caffeine-free</td>
+                <td data-label="Water" class="mono">212°F</td>
+                <td data-label="Grams" class="mono">2 g / 8 oz</td>
+                <td data-label="Time" class="mono">3 to 5 min</td>
+                <td data-label="Liquor"><span class="swatch" style="--liq:#DDC25A" role="img" aria-label="Liquor color: straw"></span></td>
+                <td data-label="Notes" class="notes">Soothing herbal blend for restful evenings. Caffeine-free.</td>
+                <td data-label="Price" class="mono price">$22</td>
+                <td class="add-cell"><button type="button" class="stamp" aria-pressed="false" data-tea="Chamomile Dreams"><span class="stamp-label">Add</span><span class="visually-hidden"> Chamomile Dreams</span></button></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="card-foot mono" id="tally" role="status">0 of 6 stamped on your sheet.</p>
+          <p class="card-foot mono">[SHIPPING AND RETURNS LINE]</p>
+        </div>
+      </section>
+
+      <section class="origin" id="origin" aria-labelledby="origin-title">
+        <div class="wrap">
+          <div class="card-head">
+            <p class="eyebrow mono">Origin to ritual</p>
+            <h2 id="origin-title">Four stages, one line</h2>
+          </div>
+          <div class="contour" id="contour">
+            <svg class="contour-svg" viewBox="0 0 200 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path class="terrace" d="M100 0C150 50 40 110 100 170S160 280 90 340S30 450 100 510S170 620 100 680S40 790 100 850S150 940 100 1000" transform="translate(-34 0)" />
+              <path class="terrace" d="M100 0C150 50 40 110 100 170S160 280 90 340S30 450 100 510S170 620 100 680S40 790 100 850S150 940 100 1000" transform="translate(34 0)" />
+              <path class="line" pathlength="1" d="M100 0C150 50 40 110 100 170S160 280 90 340S30 450 100 510S170 620 100 680S40 790 100 850S150 940 100 1000" />
+            </svg>
+            <ol class="stages">
+              <li class="stage">
+                <span class="stage-n mono">01</span>
+                <h3>Origin</h3>
+                <p>Emerald Sencha comes from the Kyoto highlands. <span class="ph mono">[ORIGIN PER TEA]</span></p>
+              </li>
+              <li class="stage">
+                <span class="stage-n mono">02</span>
+                <h3>Harvest</h3>
+                <p>Leaf, flower or herb, picked and sorted before it reaches the bowl. <span class="ph mono">[HARVEST DETAIL PER TEA]</span></p>
+              </li>
+              <li class="stage">
+                <span class="stage-n mono">03</span>
+                <h3>Craft</h3>
+                <p>Steamed, hand-rolled, semi-oxidized, stone-ground or cold-pressed, depending on the tea.</p>
+              </li>
+              <li class="stage">
+                <span class="stage-n mono">04</span>
+                <h3>Ritual</h3>
+                <p>2 g per 8 oz of water, 3 to 5 minutes, then a quiet cup.</p>
+              </li>
+            </ol>
           </div>
         </div>
+      </section>
 
-        <section class="bench" id="bench" aria-labelledby="bench-title">
-          <h2 id="bench-title" class="bench-title">Brew bench</h2>
-          <div class="bench-grid">
+      <section class="bench" id="bench" aria-labelledby="bench-title">
+        <div class="wrap">
+          <div class="card-head">
+            <p class="eyebrow mono">Brew bench</p>
+            <h2 id="bench-title">Steep one yourself</h2>
+          </div>
+          <div class="card bench-card" id="bench-root">
             <fieldset class="bench-teas">
-              <legend>Choose a tea</legend>
+              <legend class="mono">Pick a tea</legend>
               <label class="bench-tea">
-                <input type="radio" name="bench-tea" value="Emerald Sencha" data-type="green" data-desc="Steamed green tea with grassy notes and a refreshing finish." checked />
-                <span class="bench-tea-name">Emerald Sencha</span><span class="bench-tea-price">$24</span>
+                <input type="radio" name="bench-tea" value="Emerald Sencha" data-temp="175°F" data-desc="Steamed green tea with grassy notes and a refreshing finish." checked />
+                <span class="bench-tea-name">Emerald Sencha</span><span class="bench-tea-price mono">$24</span>
               </label>
               <label class="bench-tea">
-                <input type="radio" name="bench-tea" value="Midnight Earl Grey" data-type="black" data-desc="Bold black tea infused with cold-pressed bergamot oil." />
-                <span class="bench-tea-name">Midnight Earl Grey</span><span class="bench-tea-price">$26</span>
+                <input type="radio" name="bench-tea" value="Midnight Earl Grey" data-temp="212°F" data-desc="Bold black tea infused with cold-pressed bergamot oil." />
+                <span class="bench-tea-name">Midnight Earl Grey</span><span class="bench-tea-price mono">$26</span>
               </label>
               <label class="bench-tea">
-                <input type="radio" name="bench-tea" value="Jasmine Pearls" data-type="scented" data-desc="Hand-rolled tea pearls scented with fresh jasmine flowers." />
-                <span class="bench-tea-name">Jasmine Pearls</span><span class="bench-tea-price">$32</span>
+                <input type="radio" name="bench-tea" value="Jasmine Pearls" data-temp="175°F" data-desc="Hand-rolled tea pearls scented with fresh jasmine flowers." />
+                <span class="bench-tea-name">Jasmine Pearls</span><span class="bench-tea-price mono">$32</span>
               </label>
               <label class="bench-tea">
-                <input type="radio" name="bench-tea" value="Golden Oolong" data-type="oolong" data-desc="Semi-oxidized tea with honey notes and orchid undertones." />
-                <span class="bench-tea-name">Golden Oolong</span><span class="bench-tea-price">$28</span>
+                <input type="radio" name="bench-tea" value="Golden Oolong" data-temp="195°F" data-desc="Semi-oxidized tea with honey notes and orchid undertones." />
+                <span class="bench-tea-name">Golden Oolong</span><span class="bench-tea-price mono">$28</span>
               </label>
               <label class="bench-tea">
-                <input type="radio" name="bench-tea" value="Ceremonial Matcha" data-type="green" data-desc="Stone-ground green tea powder for traditional preparation." />
-                <span class="bench-tea-name">Ceremonial Matcha</span><span class="bench-tea-price">$38</span>
+                <input type="radio" name="bench-tea" value="Ceremonial Matcha" data-temp="175°F" data-desc="Stone-ground green tea powder, whisked rather than steeped." />
+                <span class="bench-tea-name">Ceremonial Matcha</span><span class="bench-tea-price mono">$38</span>
               </label>
               <label class="bench-tea">
-                <input type="radio" name="bench-tea" value="Chamomile Dreams" data-type="herbal" data-desc="Soothing herbal blend for restful evenings. Caffeine-free." />
-                <span class="bench-tea-name">Chamomile Dreams</span><span class="bench-tea-price">$22</span>
+                <input type="radio" name="bench-tea" value="Chamomile Dreams" data-temp="212°F" data-desc="Soothing herbal blend for restful evenings. Caffeine-free." />
+                <span class="bench-tea-name">Chamomile Dreams</span><span class="bench-tea-price mono">$22</span>
               </label>
             </fieldset>
 
@@ -127,494 +457,109 @@
                   <circle class="dial-progress" id="dial-progress" cx="116" cy="116" r="100" stroke-dasharray="628.32" stroke-dashoffset="628.32" />
                 </svg>
                 <div class="dial-face">
-                  <span class="dial-time" id="dial-time">0:00</span>
-                  <span class="dial-sub">Steep</span>
+                  <span class="dial-time mono" id="dial-time">0:00</span>
+                  <span class="dial-sub mono">Steep</span>
                 </div>
               </div>
               <div class="dial-actions">
                 <button type="button" class="bench-btn" id="dial-start">Start</button>
                 <button type="button" class="bench-btn bench-btn--ghost" id="dial-reset">Reset</button>
               </div>
-              <p class="bench-window">The pale arc marks the 3 to 5 minute steep.</p>
+              <p class="bench-window mono">The pale arc marks the 3 to 5 minute steep.</p>
             </div>
 
             <div class="bench-readout">
               <h3 id="bench-name">Emerald Sencha</h3>
               <p id="bench-desc">Steamed green tea with grassy notes and a refreshing finish.</p>
+              <p class="bench-temp mono">Water <output id="bench-temp">175°F</output></p>
               <div class="bench-ratio">
-                <output class="bench-grams" id="bench-grams" for="bench-cup">2</output>
-                <span class="bench-grams-unit">g</span>
-                <span class="bench-ratio-note">of leaves for <span id="bench-oz-note">8</span> oz of water</span>
+                <output class="bench-grams mono" id="bench-grams" for="bench-cup">2</output>
+                <span class="bench-grams-unit mono">g</span>
+                <span class="bench-ratio-note">of leaves for <span id="bench-oz-note" class="mono">8</span> oz of water</span>
               </div>
-              <label class="bench-cup" for="bench-cup"><span>Cup size</span><output id="bench-oz" for="bench-cup">8 oz</output></label>
+              <label class="bench-cup" for="bench-cup"><span>Cup size</span><output id="bench-oz" class="mono" for="bench-cup">8 oz</output></label>
               <input class="bench-range" id="bench-cup" type="range" min="4" max="16" step="2" value="8" />
-              <ul class="bench-temps" aria-label="Water temperature">
-                <li data-temp="green">175°F green</li>
-                <li data-temp="black">212°F black</li>
-              </ul>
               <p class="bench-status" id="bench-status" role="status">2g of leaves per 8oz water. Press start to steep.</p>
             </div>
           </div>
-        </section>
-      </div>
-    </header>
+        </div>
+      </section>
 
-    <nav class="type-row" aria-label="Browse by tea type">
-      <div class="container">
-        <ul class="type-row-list">
-          <li><a href="#collection" data-type="green">Green</a></li>
-          <li><a href="#collection" data-type="black">Black</a></li>
-          <li><a href="#collection" data-type="oolong">Oolong</a></li>
-          <li><a href="#collection" data-type="scented">Scented</a></li>
-          <li><a href="#collection" data-type="herbal">Herbal</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="features" class="features-section" aria-labelledby="features-heading">
-      <h2 id="features-heading" class="visually-hidden">Why Choose TeaPlace</h2>
-      <div class="container">
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <h3>Ethically Sourced</h3>
-            <p>Direct partnerships with farmers ensure fair wages and sustainable practices.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 17l-6.3 4 2.3-7-6-4.6h7.6L12 2z" />
-              </svg>
-            </div>
-            <h3>Premium Quality</h3>
-            <p>Hand-picked leaves processed using traditional methods for superior flavor.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-            </div>
-            <h3>Zero Waste</h3>
-            <p>Biodegradable packaging and carbon-neutral shipping on every order.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tea Journey Section -->
-    <section id="journey" class="journey-section">
-      <div class="journey-progress">
-        <div class="progress-dot active" data-stage="1"></div>
-        <div class="progress-dot" data-stage="2"></div>
-        <div class="progress-dot" data-stage="3"></div>
-        <div class="progress-dot" data-stage="4"></div>
-      </div>
-
-      <div class="journey-stage" data-stage="1">
-        <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1920&q=80" alt="Tea plantation in misty highlands" width="1920" height="1280" loading="lazy" />
-        </div>
-        <div class="journey-content">
-          <span class="stage-number">01</span>
-          <h2>Origin</h2>
-          <p>Grown in the misty highlands of Kyoto, where ancient volcanic soil and gentle morning fog create the perfect terroir for exceptional tea.</p>
-        </div>
-      </div>
-
-      <div class="journey-stage" data-stage="2">
-        <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1920&q=80" alt="Hands picking tea leaves" width="1920" height="1280" loading="lazy" />
-        </div>
-        <div class="journey-content">
-          <span class="stage-number">02</span>
-          <h2>Harvest</h2>
-          <p>Hand-picked at dawn, when leaves hold morning dew. Each leaf selected by master harvesters with generations of expertise.</p>
-        </div>
-      </div>
-
-      <div class="journey-stage" data-stage="3">
-        <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1920&q=80" alt="Traditional tea processing" width="1920" height="1280" loading="lazy" />
-        </div>
-        <div class="journey-content">
-          <span class="stage-number">03</span>
-          <h2>Craft</h2>
-          <p>Steamed, rolled, and dried using 400-year-old methods. No shortcuts, no compromise. Just time-honored tradition.</p>
-        </div>
-      </div>
-
-      <div class="journey-stage" data-stage="4">
-        <div class="journey-bg">
-          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1920&q=80" alt="Steaming cup of tea" width="1920" height="1280" loading="lazy" />
-        </div>
-        <div class="journey-content">
-          <span class="stage-number">04</span>
-          <h2>Ritual</h2>
-          <p>Your moment of calm, intentionally brewed. From our hands to your cup, a journey completed in quiet contemplation.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="collection" class="collection-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="small-caps">Curated Selection</span>
-          <h2>Signature Blends</h2>
-          <p class="type-status" id="type-status" role="status" hidden>
-            <span id="type-status-text"></span>
-            <button type="button" class="type-clear" id="type-clear">Show all</button>
+      <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+        <div class="wrap">
+          <p class="eyebrow mono">Philosophy</p>
+          <h2 id="philosophy-title">Slow down. Sip intentionally.</h2>
+          <p class="philosophy-text">
+            Each tea here asks for three to five minutes. Give it that, and nothing else.
           </p>
         </div>
+      </section>
 
-        <div class="product-grid">
-          <article class="product-card" data-tilt data-type="green">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&q=80" alt="Emerald Sencha premium green tea with grassy notes" width="600" height="400" loading="lazy" />
-              <span class="tag">Bestseller</span>
-              <span class="quick-view">Quick View</span>
-            </div>
-            <div class="product-info">
-              <h3>Emerald Sencha</h3>
-              <p class="description">Steamed green tea with grassy notes and a refreshing finish.</p>
-              <div class="product-footer">
-                <span class="price">$24</span>
-                <button type="button" class="add-to-cart" aria-label="Add to cart">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-tilt data-type="black">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600&q=80" alt="Midnight Earl Grey bold black tea with bergamot" width="600" height="400" loading="lazy" />
-              <span class="quick-view">Quick View</span>
-            </div>
-            <div class="product-info">
-              <h3>Midnight Earl Grey</h3>
-              <p class="description">Bold black tea infused with cold-pressed bergamot oil.</p>
-              <div class="product-footer">
-                <span class="price">$26</span>
-                <button type="button" class="add-to-cart" aria-label="Add to cart">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-tilt data-type="scented">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Jasmine Pearls hand-rolled tea scented with jasmine flowers" width="600" height="400" loading="lazy" />
-              <span class="tag tag--clay">Premium</span>
-              <span class="quick-view">Quick View</span>
-            </div>
-            <div class="product-info">
-              <h3>Jasmine Pearls</h3>
-              <p class="description">Hand-rolled tea pearls scented with fresh jasmine flowers.</p>
-              <div class="product-footer">
-                <span class="price">$32</span>
-                <button type="button" class="add-to-cart" aria-label="Add to cart">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-tilt data-type="oolong">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80" alt="Golden Oolong semi-oxidized tea with honey notes" width="600" height="400" loading="lazy" />
-              <span class="tag tag--new">New</span>
-              <span class="quick-view">Quick View</span>
-            </div>
-            <div class="product-info">
-              <h3>Golden Oolong</h3>
-              <p class="description">Semi-oxidized tea with honey notes and orchid undertones.</p>
-              <div class="product-footer">
-                <span class="price">$28</span>
-                <button type="button" class="add-to-cart" aria-label="Add to cart">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-tilt data-type="green">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&q=80" alt="Ceremonial Matcha stone-ground green tea powder" width="600" height="400" loading="lazy" />
-              <span class="quick-view">Quick View</span>
-            </div>
-            <div class="product-info">
-              <h3>Ceremonial Matcha</h3>
-              <p class="description">Stone-ground green tea powder for traditional preparation.</p>
-              <div class="product-footer">
-                <span class="price">$38</span>
-                <button type="button" class="add-to-cart" aria-label="Add to cart">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-tilt data-type="herbal">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80" alt="Chamomile Dreams soothing caffeine-free herbal blend" width="600" height="400" loading="lazy" />
-              <span class="quick-view">Quick View</span>
-            </div>
-            <div class="product-info">
-              <h3>Chamomile Dreams</h3>
-              <p class="description">Soothing herbal blend for restful evenings. Caffeine-free.</p>
-              <div class="product-footer">
-                <span class="price">$22</span>
-                <button type="button" class="add-to-cart" aria-label="Add to cart">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
+      <section class="brew" id="brew" aria-labelledby="brew-title">
+        <div class="wrap">
+          <div class="card-head">
+            <p class="eyebrow mono">Instruction slip</p>
+            <h2 id="brew-title">How to brew</h2>
+          </div>
+          <ol class="slip">
+            <li class="slip-panel" style="--n:0">
+              <span class="slip-n mono">01</span>
+              <h3>Measure</h3>
+              <p>2 g of leaves per 8 oz of water.</p>
+            </li>
+            <li class="slip-panel" style="--n:1">
+              <span class="slip-n mono">02</span>
+              <h3>Heat</h3>
+              <p>175°F for green, jasmine and matcha. 195°F for oolong. 212°F for black and herbal.</p>
+            </li>
+            <li class="slip-panel" style="--n:2">
+              <span class="slip-n mono">03</span>
+              <h3>Steep</h3>
+              <p>3 to 5 minutes. Whisk the matcha instead.</p>
+            </li>
+            <li class="slip-panel" style="--n:3">
+              <span class="slip-n mono">04</span>
+              <h3>Pour</h3>
+              <p>Strain and serve warm.</p>
+            </li>
+            <li class="slip-panel" style="--n:4">
+              <span class="slip-n mono">05</span>
+              <h3>Savor</h3>
+              <p>Breathe in the aroma first.</p>
+            </li>
+          </ol>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Philosophy Section -->
-    <section id="philosophy" class="philosophy-section">
-      <div class="philosophy-image">
-        <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=1200&q=80" alt="Traditional tea ceremony with mindful preparation" width="1200" height="800" loading="lazy" />
-      </div>
-      <div class="philosophy-content">
-        <span class="small-caps">Our Philosophy</span>
-        <h2>Slow Down.<br/>Sip Intentionally.</h2>
-        <p>In a world of instant everything, we believe in the power of pause. Each blend is an invitation to be present, a ritual that transforms a simple cup into a moment of clarity.</p>
-        <p>We partner directly with small family farms, ensuring every leaf tells a story of tradition, care, and respect for the land.</p>
-        <div class="philosophy-stats">
-          <div class="stat">
-            <span class="stat-number" data-target="12">0</span>
-            <span class="stat-label">Countries</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="40">0</span>
-            <span class="stat-label">Partner Farms</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="100">0</span>
-            <span class="stat-label">% Sustainable</span>
-          </div>
+      <section class="news" aria-labelledby="news-title">
+        <div class="wrap">
+          <h2 class="visually-hidden" id="news-title">Newsletter</h2>
+          <form class="news-form" id="news-form" novalidate>
+            <label for="news-email" class="news-lead">Send one brewing note a week to</label>
+            <input id="news-email" name="email" type="email" autocomplete="email" placeholder="name@email.com" required />
+            <button type="submit" class="btn">Send</button>
+          </form>
+          <p class="news-status mono" id="news-status" role="status"></p>
         </div>
-      </div>
-    </section>
-
-    <!-- Image Grid Section -->
-    <section id="moments" class="moments-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="small-caps">Gallery</span>
-          <h2>Moments of Calm</h2>
-        </div>
-        <div class="image-grid">
-          <a href="#lightbox-1" class="grid-item grid-item--tall" aria-label="View enlarged image: Steam rising from tea cup">
-            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80" alt="Steam rising from tea cup" width="800" height="533" loading="lazy" />
-          </a>
-          <a href="#lightbox-2" class="grid-item" aria-label="View enlarged image: Hands warming on mug">
-            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Hands warming on mug" width="800" height="533" loading="lazy" />
-          </a>
-          <a href="#lightbox-3" class="grid-item" aria-label="View enlarged image: Tea leaves in ceramic dish">
-            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&q=80" alt="Tea leaves in ceramic dish" width="800" height="533" loading="lazy" />
-          </a>
-          <a href="#lightbox-4" class="grid-item grid-item--wide" aria-label="View enlarged image: Cozy reading nook with tea">
-            <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=800&q=80" alt="Cozy reading nook with tea" width="800" height="533" loading="lazy" />
-          </a>
-          <a href="#lightbox-5" class="grid-item" aria-label="View enlarged image: Aerial view of tea set">
-            <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=800&q=80" alt="Aerial view of tea set" width="800" height="533" loading="lazy" />
-          </a>
-          <a href="#lightbox-6" class="grid-item grid-item--tall" aria-label="View enlarged image: Tea in nature">
-            <img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=800&q=80" alt="Tea in nature" width="800" height="533" loading="lazy" />
-          </a>
-        </div>
-      </div>
-
-      <!-- CSS-only Lightbox -->
-      <div id="lightbox-1" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1600&q=90" alt="Steam rising from tea cup - enlarged view" width="1600" height="1067" loading="lazy" /></div>
-      <div id="lightbox-2" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1600&q=90" alt="Hands warming on mug - enlarged view" width="1600" height="1067" loading="lazy" /></div>
-      <div id="lightbox-3" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=90" alt="Tea leaves in ceramic dish - enlarged view" width="1600" height="1067" loading="lazy" /></div>
-      <div id="lightbox-4" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=1600&q=90" alt="Cozy reading nook with tea - enlarged view" width="1600" height="1067" loading="lazy" /></div>
-      <div id="lightbox-5" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=1600&q=90" alt="Aerial view of tea set - enlarged view" width="1600" height="1067" loading="lazy" /></div>
-      <div id="lightbox-6" class="lightbox"><a href="#moments" class="lightbox-close" aria-label="Close lightbox"><span class="visually-hidden">Close</span></a><img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=1600&q=90" alt="Tea in nature - enlarged view" width="1600" height="1067" loading="lazy" /></div>
-    </section>
-
-    <!-- Brewing Guide Section -->
-    <section id="brewing" class="brewing-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="small-caps">The Ritual</span>
-          <h2>How to Brew</h2>
-        </div>
-        <div class="brewing-steps">
-          <div class="brew-step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M24 4v8M24 36v8M4 24h8M36 24h8"/>
-                <circle cx="24" cy="24" r="12"/>
-                <path d="M24 18v12M18 24h12"/>
-              </svg>
-            </div>
-            <span class="step-number">01</span>
-            <h3>Measure</h3>
-            <p>2g of leaves per 8oz water</p>
-          </div>
-          <div class="brew-step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M12 40h24M16 40V24a8 8 0 0 1 16 0v16"/>
-                <path d="M20 12c0-2 1-4 4-4s4 2 4 4" stroke-dasharray="2 2"/>
-                <path d="M24 8v-4M20 6l-2-2M28 6l2-2"/>
-              </svg>
-            </div>
-            <span class="step-number">02</span>
-            <h3>Heat</h3>
-            <p>175°F green, 212°F black</p>
-          </div>
-          <div class="brew-step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <circle cx="24" cy="24" r="16"/>
-                <path d="M24 12v12l8 4"/>
-              </svg>
-            </div>
-            <span class="step-number">03</span>
-            <h3>Steep</h3>
-            <p>3-5 minutes, patience rewarded</p>
-          </div>
-          <div class="brew-step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M10 16h20v20a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16z"/>
-                <path d="M30 20h4a4 4 0 0 1 0 8h-4"/>
-                <path d="M16 8v8M20 6v10M24 8v8"/>
-              </svg>
-            </div>
-            <span class="step-number">04</span>
-            <h3>Pour</h3>
-            <p>Strain and serve warm</p>
-          </div>
-          <div class="brew-step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M14 20h20v16a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V20z"/>
-                <path d="M18 12c2-4 6-4 6-4s4 0 6 4"/>
-                <path d="M24 4v4"/>
-              </svg>
-            </div>
-            <span class="step-number">05</span>
-            <h3>Savor</h3>
-            <p>Breathe in the aroma first</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section">
-      <div class="container container--narrow">
-        <h2>Join the Ritual</h2>
-        <p>Weekly brewing tips, new arrivals, and 10% off your first order.</p>
-        <form class="newsletter-form" onsubmit="return false;">
-          <div class="input-wrapper">
-            <label for="newsletter-email" class="visually-hidden">Email address</label>
-            <input type="email" id="newsletter-email" placeholder="Your email address" required />
-            <button type="submit" class="btn-primary btn-primary--dark">Subscribe</button>
-          </div>
-          <span class="form-note">No spam. Unsubscribe anytime.</span>
-        </form>
-      </div>
-    </section>
+      </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer-content">
-        <div class="footer-brand">
-          <a href="#home" class="logo">TeaPlace.</a>
-          <p>Curating the finest tea experiences for moments of peace and connection.</p>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="18" cy="6" r="1"/>
-              </svg>
-              <span class="visually-hidden">Instagram</span>
-            </a>
-            <a href="https://www.pinterest.com/" class="social-link" aria-label="Pinterest">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v12M9 15l3 3 3-3"/>
-              </svg>
-              <span class="visually-hidden">Pinterest</span>
-            </a>
-            <a href="https://x.com/" class="social-link" aria-label="Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-              </svg>
-              <span class="visually-hidden">Twitter</span>
-            </a>
-          </div>
+      <div class="wrap footer-inner">
+        <span class="seal seal--giant" aria-hidden="true">茶</span>
+        <div class="footer-body">
+          <p class="footer-word">TeaPlace</p>
+          <nav class="footer-links" aria-label="Footer">
+            <a href="#collection">Shop the six</a>
+            <a href="#steep">The steep</a>
+            <a href="#bench">Brew bench</a>
+            <a href="#brew">How to brew</a>
+            <a href="#top">Back to top</a>
+          </nav>
+          <p class="footer-fine mono">© <span class="ph">[FOUNDING YEAR]</span> TeaPlace</p>
         </div>
-        <div class="footer-links">
-          <div class="link-group">
-            <h3 class="link-group-title">Shop</h3>
-            <a href="#collection">All Teas</a>
-            <a href="#collection">Accessories</a>
-            <a href="#collection">Gift Sets</a>
-            <a href="#newsletter">Subscriptions</a>
-          </div>
-          <div class="link-group">
-            <h3 class="link-group-title">Company</h3>
-            <a href="#philosophy">Our Story</a>
-            <a href="#journey">Sourcing</a>
-            <a href="#brewing">Journal</a>
-            <a href="#newsletter">Contact</a>
-          </div>
-        </div>
-      </div>
-      <div class="container copyright">
-        <p>&copy; 2024 TeaPlace. Crafted with intention.</p>
       </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button type="button" class="back-to-top" aria-label="Back to top">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path d="M18 15l-6-6-6 6"/>
-      </svg>
-    </button>
 
     <script src="index.js"></script>
   </body>
