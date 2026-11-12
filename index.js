@@ -1,386 +1,215 @@
-// TeaPlace - Portfolio Site JavaScript
-// Modern vanilla JS with intersection observers and scroll-driven effects
+// TeaPlace: vanilla JS. Steep scene, nav, stamps, brew bench timer.
 
-// ============================================
-// Navigation
-// ============================================
-const navbar = document.querySelector('.navbar')
-const mobileBtn = document.querySelector('.mobile-menu-btn')
-const navLinks = document.querySelector('.nav-links')
-
-// Toggle Mobile Menu
-mobileBtn?.addEventListener('click', () => {
-  navLinks.classList.toggle('active')
-  mobileBtn.classList.toggle('active')
-  document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : ''
-})
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active')
-    mobileBtn.classList.remove('active')
-    document.body.style.overflow = ''
-  })
-})
-
-// Navbar scroll effect
-let _lastScroll = 0
-window.addEventListener(
-  'scroll',
-  () => {
-    const currentScroll = window.scrollY
-
-    if (currentScroll > 100) {
-      navbar.classList.add('scrolled')
-    } else {
-      navbar.classList.remove('scrolled')
-    }
-
-    _lastScroll = currentScroll
-  },
-  { passive: true }
-)
-
-// ============================================
-// Scroll Reveal Animation
-// ============================================
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible')
-        // Don't unobserve - allow re-triggering for some elements
-      }
-    })
-  },
-  {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px',
-  }
-)
-
-// Observe elements for reveal
-document
-  .querySelectorAll(
-    '.feature-card, .product-card, .section-header, .philosophy-content, .brew-step'
-  )
-  .forEach((el) => {
-    el.style.opacity = '0'
-    el.style.transform = 'translateY(30px)'
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
-    revealObserver.observe(el)
-  })
-
-// Add visible class styles
-const style = document.createElement('style')
-style.textContent = `
-  .feature-card.visible,
-  .product-card.visible,
-  .section-header.visible,
-  .philosophy-content.visible,
-  .brew-step.visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-`
-document.head.appendChild(style)
-
-// Stagger animation for grid items
-document.querySelectorAll('.feature-card, .product-card, .brew-step').forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 3) * 0.1}s`
-})
-
-// ============================================
-// Tea Journey Section
-// ============================================
-const journeySection = document.querySelector('.journey-section')
-const journeyStages = document.querySelectorAll('.journey-stage')
-const progressDots = document.querySelectorAll('.progress-dot')
-
-// Journey stage observer
-const journeyObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible')
-
-        // Update progress dots
-        const stage = entry.target.dataset.stage
-        progressDots.forEach((dot) => {
-          dot.classList.toggle('active', dot.dataset.stage === stage)
-        })
-      }
-    })
-  },
-  {
-    threshold: 0.5,
-    rootMargin: '-10% 0px -10% 0px',
-  }
-)
-
-journeyStages.forEach((stage) => {
-  journeyObserver.observe(stage)
-})
-
-// Show/hide progress dots based on section visibility
-const journeySectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const progressContainer = document.querySelector('.journey-progress')
-      if (progressContainer) {
-        progressContainer.classList.toggle('visible', entry.isIntersecting)
-      }
-    })
-  },
-  { threshold: 0.1 }
-)
-
-if (journeySection) {
-  journeySectionObserver.observe(journeySection)
+// PLACEHOLDER [STEEP TIME PER TEA]: not supplied by the owner, confirm before launch
+// Seconds. The only supplied fact is "3 to 5 minutes". Drives the steep clock ticks,
+// the cup labels and the collection TIME column.
+const STEEP_TIMES = {
+  sencha: 180,
+  earl: 270,
+  jasmine: 210,
+  oolong: 240,
+  matcha: 60,
+  chamomile: 300,
 }
 
-// Progress dot click navigation
-progressDots.forEach((dot) => {
-  dot.addEventListener('click', () => {
-    const stage = dot.dataset.stage
-    const target = document.querySelector(`.journey-stage[data-stage="${stage}"]`)
-    target?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  })
-})
+const root = document.documentElement
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value))
+const ease = (value) => value * value * (3 - 2 * value)
+const formatTime = (seconds) => {
+  const whole = Math.floor(seconds)
+  return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
+}
 
-// Parallax effect for journey backgrounds
-let ticking = false
-window.addEventListener(
-  'scroll',
-  () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        journeyStages.forEach((stage) => {
-          const rect = stage.getBoundingClientRect()
-          const scrollY = (rect.top / window.innerHeight) * 50
-          stage.style.setProperty('--scroll-y', `${scrollY}px`)
-        })
-        ticking = false
-      })
-      ticking = true
-    }
-  },
-  { passive: true }
-)
-
-// ============================================
-// 3D Tilt Effect for Product Cards
-// ============================================
-const tiltCards = document.querySelectorAll('[data-tilt]')
-
-tiltCards.forEach((card) => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-
-    const centerX = rect.width / 2
-    const centerY = rect.height / 2
-
-    const rotateX = (y - centerY) / 20
-    const rotateY = (centerX - x) / 20
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`
-  })
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)'
-  })
-})
-
-// ============================================
-// Stat Counter Animation
-// ============================================
-const statNumbers = document.querySelectorAll('.stat-number')
-
-const countObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const target = parseInt(entry.target.dataset.target, 10)
-        animateCount(entry.target, target)
-        countObserver.unobserve(entry.target)
-      }
-    })
-  },
-  { threshold: 0.5 }
-)
-
-statNumbers.forEach((num) => {
-  countObserver.observe(num)
-})
-
-function animateCount(element, target) {
-  let current = 0
-  const increment = target / 40
-  const duration = 1500
-  const stepTime = duration / 40
-
-  const timer = setInterval(() => {
-    current += increment
-    if (current >= target) {
-      element.textContent = target
-      clearInterval(timer)
-    } else {
-      element.textContent = Math.floor(current)
-    }
-  }, stepTime)
+for (const el of document.querySelectorAll('[data-steep-time]')) {
+  const id = el.dataset.steepTime
+  el.textContent = `${id === 'matcha' ? 'whisk ' : ''}${formatTime(STEEP_TIMES[id])}`
+}
+for (const cup of document.querySelectorAll('.cup[data-tea]')) {
+  cup.dataset.ideal = String(STEEP_TIMES[cup.dataset.tea])
 }
 
 // ============================================
-// Newsletter Form
+// Session date on the cupping sheet header
 // ============================================
-const newsletterForm = document.querySelector('.newsletter-form')
-const submitBtn = newsletterForm?.querySelector('button')
-const emailInput = newsletterForm?.querySelector('input')
+const sessionDate = document.getElementById('session-date')
+if (sessionDate) {
+  const today = new Date().toLocaleDateString('en-CA')
+  sessionDate.textContent = today
+  sessionDate.setAttribute('datetime', today)
+}
 
-newsletterForm?.addEventListener('submit', (e) => {
-  e.preventDefault()
-
-  if (emailInput?.validity.valid) {
-    submitBtn.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M20 6L9 17l-5-5"/>
-      </svg>
-      You're in!
-    `
-    submitBtn.style.pointerEvents = 'none'
-    emailInput.disabled = true
-
-    // Reset after 3 seconds (demo only)
-    setTimeout(() => {
-      submitBtn.textContent = 'Subscribe'
-      submitBtn.style.pointerEvents = ''
-      emailInput.disabled = false
-      emailInput.value = ''
-    }, 3000)
+// ============================================
+// Nav: everything but the pill hides while scrolling down
+// ============================================
+const nav = document.getElementById('nav')
+if (nav) {
+  let lastY = window.scrollY
+  const updateNav = () => {
+    const y = window.scrollY
+    if (y < 80) nav.classList.remove('is-condensed')
+    else if (y > lastY + 4) nav.classList.add('is-condensed')
+    else if (y < lastY - 4) nav.classList.remove('is-condensed')
+    lastY = y
   }
-})
+  window.addEventListener('scroll', updateNav, { passive: true })
+  nav.addEventListener('focusin', () => nav.classList.remove('is-condensed'))
+  updateNav()
+}
 
 // ============================================
-// Smooth Scroll for Anchor Links
+// The steep: a pinned scene driven by scroll progress.
+// position: sticky pins the stage; scroll progress p (0 to 1) sets per-bowl
+// CSS variables. No JS pin library is needed. Without JS, or under
+// prefers-reduced-motion, the CSS shows six already-steeped bowls.
 // ============================================
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', (e) => {
-    const href = anchor.getAttribute('href')
-    if (href === '#') return
+const steep = document.querySelector('[data-steep]')
+if (steep) {
+  const cups = Array.from(steep.querySelectorAll('.cup'))
+  const clockEl = document.getElementById('steep-clock')
+  const cueEl = steep.querySelector('.steep-cue')
+  const STEEP_SECONDS = 300
+  const GATHER_END = 0.1
+  const CLOCK_START = 0.16
+  const CLOCK_END = 0.94
+  let queued = false
 
-    const target = document.querySelector(href)
-    if (target) {
-      e.preventDefault()
-      const offset = navbar?.offsetHeight || 80
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      })
+  const resetCups = () => {
+    for (const cup of cups) {
+      for (const name of ['--g', '--pour', '--b', '--vapor']) cup.style.removeProperty(name)
+      cup.classList.remove('is-stamped')
     }
-  })
-})
+    steep.querySelector('.steep-cue')?.classList.remove('is-done')
+  }
+
+  const render = () => {
+    queued = false
+    if (!root.classList.contains('pin')) return
+    const total = steep.offsetHeight - window.innerHeight
+    const p = clamp(-steep.getBoundingClientRect().top / total)
+    const t = clamp((p - CLOCK_START) / (CLOCK_END - CLOCK_START)) * STEEP_SECONDS
+    const gather = ease(clamp(p / GATHER_END))
+    cups.forEach((cup, i) => {
+      const ideal = Number(cup.dataset.ideal)
+      const pour = ease(clamp((p - GATHER_END - i * 0.008) / 0.05))
+      const bloom = ease(clamp(t / ideal))
+      cup.style.setProperty('--g', gather.toFixed(3))
+      cup.style.setProperty('--pour', pour.toFixed(3))
+      cup.style.setProperty('--b', (pour * bloom).toFixed(3))
+      cup.style.setProperty('--vapor', (pour * 0.75).toFixed(3))
+      cup.classList.toggle('is-stamped', t >= ideal)
+    })
+    if (clockEl) clockEl.textContent = formatTime(t)
+    if (cueEl) cueEl.classList.toggle('is-done', p > 0.96)
+  }
+
+  const queue = () => {
+    if (queued) return
+    queued = true
+    window.requestAnimationFrame(render)
+  }
+
+  const applyMode = () => {
+    root.classList.toggle('pin', !reduceMotion.matches)
+    if (reduceMotion.matches) resetCups()
+    else render()
+  }
+
+  window.addEventListener('scroll', queue, { passive: true })
+  window.addEventListener('resize', queue)
+  reduceMotion.addEventListener('change', applyMode)
+  applyMode()
+}
 
 // ============================================
-// Brewing Guide Step Hover Effects
+// Scroll-driven fallbacks (contour draw, folded slip) where
+// CSS animation-timeline is unsupported
 // ============================================
-const brewSteps = document.querySelectorAll('.brew-step')
+if (!CSS.supports('animation-timeline', 'view()')) {
+  root.classList.add('no-sda')
+  const contour = document.getElementById('contour')
+  const panels = document.querySelectorAll('.slip-panel')
 
-brewSteps.forEach((step) => {
-  const icon = step.querySelector('.step-icon svg')
-
-  step.addEventListener('mouseenter', () => {
-    // Add subtle animation to SVG
-    if (icon) {
-      icon.style.transform = 'scale(1.1)'
+  if (contour) {
+    const draw = () => {
+      if (reduceMotion.matches) {
+        contour.style.setProperty('--draw', '1')
+        return
+      }
+      const rect = contour.getBoundingClientRect()
+      const progress = clamp((window.innerHeight * 0.7 - rect.top) / rect.height)
+      contour.style.setProperty('--draw', progress.toFixed(3))
     }
-  })
+    window.addEventListener('scroll', draw, { passive: true })
+    window.addEventListener('resize', draw)
+    draw()
+  }
 
-  step.addEventListener('mouseleave', () => {
-    if (icon) {
-      icon.style.transform = ''
-    }
-  })
-})
-
-// ============================================
-// Image Grid Lazy Loading (optional enhancement)
-// ============================================
-if ('IntersectionObserver' in window) {
-  const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target
-        if (img.dataset.src) {
-          img.src = img.dataset.src
-          img.removeAttribute('data-src')
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) entry.target.classList.add('is-open')
         }
-        imageObserver.unobserve(img)
-      }
-    })
-  })
+      },
+      { threshold: 0.3 }
+    )
+    for (const panel of panels) observer.observe(panel)
+  } else {
+    for (const panel of panels) panel.classList.add('is-open')
+  }
+}
 
-  document.querySelectorAll('img[data-src]').forEach((img) => {
-    imageObserver.observe(img)
+// ============================================
+// Collection: "Add" is a red stamp that presses in on click
+// ============================================
+const stamps = document.querySelectorAll('.stamp')
+const tally = document.getElementById('tally')
+
+const updateTally = () => {
+  const count = document.querySelectorAll('.stamp[aria-pressed="true"]').length
+  if (tally) tally.textContent = `${count} of ${stamps.length} stamped on your sheet.`
+}
+
+for (const stamp of stamps) {
+  const label = stamp.querySelector('.stamp-label')
+  stamp.addEventListener('click', () => {
+    const on = stamp.getAttribute('aria-pressed') !== 'true'
+    stamp.setAttribute('aria-pressed', String(on))
+    if (label) label.textContent = on ? 'Stamped' : 'Add'
+    stamp.classList.remove('is-pressing')
+    void stamp.offsetWidth
+    stamp.classList.add('is-pressing')
+    updateTally()
+  })
+  stamp.addEventListener('animationend', () => stamp.classList.remove('is-pressing'))
+}
+
+// ============================================
+// Newsletter (demo: no list is connected)
+// ============================================
+const newsForm = document.getElementById('news-form')
+const newsStatus = document.getElementById('news-status')
+if (newsForm && newsStatus) {
+  newsForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const email = newsForm.querySelector('input')
+    if (!email.checkValidity()) {
+      newsStatus.textContent = 'Enter a valid email address.'
+      email.focus()
+      return
+    }
+    newsStatus.textContent = 'Noted. This demo has no mailing list connected.'
+    newsForm.reset()
   })
 }
 
 // ============================================
-// Prefers Reduced Motion
-// ============================================
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
-
-if (prefersReducedMotion.matches) {
-  // Disable animations for users who prefer reduced motion
-  document.documentElement.style.setProperty('--transition-slow', '0s')
-  document.documentElement.style.setProperty('--transition-medium', '0s')
-  document.documentElement.style.setProperty('--transition-fast', '0s')
-
-  // Remove tilt effect
-  tiltCards.forEach((card) => {
-    card.removeAttribute('data-tilt')
-  })
-}
-
-// ============================================
-// Tea type filter (reads data-type on each product card)
-// ============================================
-const typeLinks = document.querySelectorAll('.type-row-list a[data-type]')
-const typeCards = document.querySelectorAll('.product-card[data-type]')
-const typeStatus = document.getElementById('type-status')
-const typeStatusText = document.getElementById('type-status-text')
-
-function applyTypeFilter(type) {
-  let shown = 0
-  typeCards.forEach((card) => {
-    const match = !type || card.dataset.type === type
-    card.hidden = !match
-    if (match) shown += 1
-  })
-  typeLinks.forEach((link) => {
-    if (link.dataset.type === type) link.setAttribute('aria-current', 'true')
-    else link.removeAttribute('aria-current')
-  })
-  if (!typeStatus || !typeStatusText) return
-  typeStatus.hidden = !type
-  typeStatusText.textContent = type ? `Showing ${shown} of ${typeCards.length}: ${type} teas.` : ''
-}
-
-typeLinks.forEach((link) => {
-  link.addEventListener('click', () => applyTypeFilter(link.dataset.type))
-})
-document.getElementById('type-clear')?.addEventListener('click', () => applyTypeFilter(null))
-
-// ============================================
-// Brew bench (hero): tea picker, leaf ratio and steep timer.
+// Brew bench: tea picker, leaf ratio and steep timer.
 // Ratio (2g per 8oz), temperatures and the 3-5 minute steep come from the
-// brewing guide below; teas, prices and descriptions mirror the collection.
+// brewing guide; teas, prices and descriptions mirror the collection.
 // ============================================
-const benchRoot = document.getElementById('bench')
+const benchRoot = document.getElementById('bench-root')
 
 if (benchRoot) {
   const GRAMS_PER_8OZ = 2
@@ -391,11 +220,11 @@ if (benchRoot) {
   const teaInputs = benchRoot.querySelectorAll('input[name="bench-tea"]')
   const nameEl = document.getElementById('bench-name')
   const descEl = document.getElementById('bench-desc')
+  const tempEl = document.getElementById('bench-temp')
   const gramsEl = document.getElementById('bench-grams')
   const ozEl = document.getElementById('bench-oz')
   const ozNoteEl = document.getElementById('bench-oz-note')
   const cupInput = document.getElementById('bench-cup')
-  const tempItems = benchRoot.querySelectorAll('[data-temp]')
   const statusEl = document.getElementById('bench-status')
   const timeEl = document.getElementById('dial-time')
   const ringEl = document.getElementById('dial-progress')
@@ -406,11 +235,6 @@ if (benchRoot) {
   let startedAt = 0
   let timer = null
   let announced = 0
-
-  const formatTime = (seconds) => {
-    const whole = Math.floor(seconds)
-    return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
-  }
 
   const renderRatio = () => {
     const oz = Number(cupInput.value)
@@ -425,15 +249,17 @@ if (benchRoot) {
     if (!picked) return
     nameEl.textContent = picked.value
     descEl.textContent = picked.dataset.desc
-    tempItems.forEach((item) => {
-      if (item.dataset.temp === picked.dataset.type) item.setAttribute('aria-current', 'true')
-      else item.removeAttribute('aria-current')
-    })
+    tempEl.textContent = picked.dataset.temp
   }
 
   const renderTimer = () => {
     timeEl.textContent = formatTime(elapsed)
     ringEl.style.strokeDashoffset = String(RING * (1 - Math.min(elapsed / STEEP_SECONDS, 1)))
+  }
+
+  function stop() {
+    if (timer) window.clearInterval(timer)
+    timer = null
   }
 
   const tick = () => {
@@ -452,11 +278,6 @@ if (benchRoot) {
     }
   }
 
-  function stop() {
-    if (timer) window.clearInterval(timer)
-    timer = null
-  }
-
   startBtn.addEventListener('click', () => {
     if (timer) {
       stop()
@@ -466,7 +287,12 @@ if (benchRoot) {
     startedAt = performance.now() - elapsed * 1000
     timer = window.setInterval(tick, 250)
     startBtn.textContent = 'Pause'
-    if (announced === 0) statusEl.textContent = 'Steeping.'
+    if (announced === 0) {
+      const picked = benchRoot.querySelector('input[name="bench-tea"]:checked')
+      statusEl.textContent = /matcha/i.test(picked?.value ?? '')
+        ? 'Whisk, do not steep.'
+        : 'Steeping.'
+    }
   })
 
   resetBtn.addEventListener('click', () => {
@@ -479,35 +305,10 @@ if (benchRoot) {
     renderTimer()
   })
 
-  teaInputs.forEach((input) => {
-    input.addEventListener('change', renderTea)
-  })
+  for (const input of teaInputs) input.addEventListener('change', renderTea)
   cupInput.addEventListener('input', renderRatio)
 
   renderTea()
   renderRatio()
   renderTimer()
 }
-
-// ============================================
-// Back to Top Button
-// ============================================
-const backToTop = document.querySelector('.back-to-top')
-
-window.addEventListener(
-  'scroll',
-  () => {
-    if (window.scrollY > 500) {
-      backToTop?.classList.add('visible')
-    } else {
-      backToTop?.classList.remove('visible')
-    }
-  },
-  { passive: true }
-)
-
-backToTop?.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-})
-
-console.log('TeaPlace loaded successfully')
