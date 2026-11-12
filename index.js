@@ -287,7 +287,12 @@ if (benchRoot) {
     startedAt = performance.now() - elapsed * 1000
     timer = window.setInterval(tick, 250)
     startBtn.textContent = 'Pause'
-    if (announced === 0) statusEl.textContent = 'Steeping.'
+    if (announced === 0) {
+      const picked = benchRoot.querySelector('input[name="bench-tea"]:checked')
+      statusEl.textContent = /matcha/i.test(picked?.value ?? '')
+        ? 'Whisk, do not steep.'
+        : 'Steeping.'
+    }
   })
 
   resetBtn.addEventListener('click', () => {

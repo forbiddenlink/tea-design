@@ -722,7 +722,7 @@ html.pin .steep-row .cup .bowl {
 
   html.pin .steep-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0 2rem;
+    gap: 1.25rem 2rem;
     width: min(100%, 1000px);
     margin-inline: auto;
     padding-top: 1rem;
@@ -734,6 +734,10 @@ html.pin .steep-row .cup .bowl {
 
   html.pin .cup-name {
     font-size: 1.2rem;
+  }
+
+  html.pin .cup-note {
+    max-width: 24ch;
   }
 }
 
