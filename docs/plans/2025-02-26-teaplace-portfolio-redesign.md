@@ -1,5 +1,7 @@
 # TeaPlace Portfolio Redesign
 
+Status as of 2026-11-15: superseded. The site was later rebuilt as a cupping sheet (see the README); the palette and CSS features below no longer match the shipped design.
+
 ## Overview
 
 Transform the existing TeaPlace tea brand landing page into a portfolio-worthy showcase demonstrating modern CSS mastery, interaction design, and elevated visual aesthetics.
