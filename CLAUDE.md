@@ -25,7 +25,8 @@ pnpm watch          # webpack --watch, dev mode
 pnpm biome:check    # lint check
 pnpm biome:fix      # lint check, auto-fix
 pnpm biome:format   # format only
-pnpm check          # biome:check && build (what CI runs)
+pnpm test           # vitest run
+pnpm check          # biome:check, test and build (what CI runs)
 pnpm audit / pnpm security   # pnpm audit --audit-level high
 ```
 
@@ -43,8 +44,8 @@ CI (`.github/workflows/ci.yml`) runs `pnpm install --frozen-lockfile`, `pnpm run
 
 - Biome enforces single quotes, no semicolons (ASI), 2-space indent, 100-char lines,
   organized imports on save/check.
-- No test runner is wired up despite `vitest` and `@testing-library/react` sitting in
-  devDependencies; there are no test files and no `test` script.
+- Tests: `pnpm test` runs vitest over `bench-link.test.js`. `@testing-library/react` is in
+  devDependencies but unused.
 - CSP is locked down in `vercel.json` (`script-src 'self' 'unsafe-inline'`, Google Fonts
   allowed for style/font, `images.unsplash.com` allowed for img). Adding a new external
   resource domain means updating that header.
