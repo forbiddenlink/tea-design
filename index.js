@@ -1,4 +1,5 @@
 // TeaPlace: vanilla JS. Steep scene, nav, stamps, brew bench timer.
+import { teaFromHash, teaSlug } from './bench-link.js'
 
 // PLACEHOLDER [STEEP TIME PER TEA]: not supplied by the owner, confirm before launch
 // Seconds. The only supplied fact is "3 to 5 minutes". Drives the steep clock ticks,
@@ -305,10 +306,31 @@ if (benchRoot) {
     renderTimer()
   })
 
-  for (const input of teaInputs) input.addEventListener('change', renderTea)
-  cupInput.addEventListener('input', renderRatio)
+  const selectFromHash = () => {
+    const name = teaFromHash(
+      window.location.hash,
+      Array.from(teaInputs, (input) => input.value)
+    )
+    const input = name && Array.from(teaInputs).find((el) => el.value === name)
+    if (!input) return false
+    input.checked = true
+    return true
+  }
 
+  for (const input of teaInputs) {
+    input.addEventListener('change', () => {
+      renderTea()
+      window.history.replaceState(null, '', `#tea=${teaSlug(input.value)}`)
+    })
+  }
+  cupInput.addEventListener('input', renderRatio)
+  window.addEventListener('hashchange', () => {
+    if (selectFromHash()) renderTea()
+  })
+
+  const linked = selectFromHash()
   renderTea()
+  if (linked) benchRoot.scrollIntoView({ block: 'center' })
   renderRatio()
   renderTimer()
 }
