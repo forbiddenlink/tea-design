@@ -236,32 +236,8 @@ function animateCount(element, target) {
 // ============================================
 // Newsletter Form
 // ============================================
-const newsletterForm = document.querySelector('.newsletter-form')
-const submitBtn = newsletterForm?.querySelector('button')
-const emailInput = newsletterForm?.querySelector('input')
-
-newsletterForm?.addEventListener('submit', (e) => {
-  e.preventDefault()
-
-  if (emailInput?.validity.valid) {
-    submitBtn.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M20 6L9 17l-5-5"/>
-      </svg>
-      You're in!
-    `
-    submitBtn.style.pointerEvents = 'none'
-    emailInput.disabled = true
-
-    // Reset after 3 seconds (demo only)
-    setTimeout(() => {
-      submitBtn.textContent = 'Subscribe'
-      submitBtn.style.pointerEvents = ''
-      emailInput.disabled = false
-      emailInput.value = ''
-    }, 3000)
-  }
-})
+// This portfolio demo intentionally does not collect newsletter subscriptions.
+// Keep the form disabled until a real, consent-based subscription flow is available.
 
 // ============================================
 // Smooth Scroll for Anchor Links

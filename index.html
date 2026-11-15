@@ -545,14 +545,14 @@
     <section id="newsletter" class="newsletter-section">
       <div class="container container--narrow">
         <h2>Join the Ritual</h2>
-        <p>Weekly brewing tips, new arrivals, and 10% off your first order.</p>
-        <form class="newsletter-form" onsubmit="return false;">
+        <p>This is a portfolio demo. Newsletter sign-ups are not open and no email address is collected.</p>
+        <form class="newsletter-form" aria-describedby="newsletter-status" onsubmit="return false;">
           <div class="input-wrapper">
             <label for="newsletter-email" class="visually-hidden">Email address</label>
-            <input type="email" id="newsletter-email" placeholder="Your email address" required />
-            <button type="submit" class="btn-primary btn-primary--dark">Subscribe</button>
+            <input type="email" id="newsletter-email" placeholder="Sign-ups are not open yet" disabled />
+            <button type="submit" class="btn-primary btn-primary--dark" disabled>Subscribe</button>
           </div>
-          <span class="form-note">No spam. Unsubscribe anytime.</span>
+          <span id="newsletter-status" class="form-note">Demo only. No subscription is created.</span>
         </form>
       </div>
     </section>
